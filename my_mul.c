@@ -6,6 +6,7 @@
 */
 
 #include <my_str.h>
+#include <my_math.h>
 #include <stdlib.h>
 
 static char make_mult(int a, int a2)
@@ -18,17 +19,18 @@ static char make_mult(int a, int a2)
 
 char *my_mul(char *av1, char *av2)
 {
-    char *result = malloc(sizeof(char) * (my_strlen(av1cpy) + my_strlen(av2cpy) + 1));
+    char *result = malloc(sizeof(char) * (my_strlen(av1) + my_strlen(av2) + 1));
     int index = 0;
     int index2 = 0;
-    
+    int resadd = 0;
     
     while (av1 != '\0' && av2 != '\0') {
         if (av2 == "\0") {
             index2 = 0;
             index++;
         }
-        result[] = make_mult(av1[index], av2[index2]);
+        result[] = make_mult(av1[index], av2[index2]); 
+        resadd = my_add(result + resadd);
         index2++;
     }
     free(av1);
