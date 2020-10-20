@@ -48,7 +48,7 @@ build: $(OBJ)
 clean:
 	rm -f $(OBJ) $(LIB_OBJ)
 
-fclean:		clean
+fclean:		clean clean_test
 	rm -f $(EXEC)
 
 test:	clean_test build_lib test_run
