@@ -10,45 +10,45 @@
 
 Test(get_sign, negative)
 {
-    cr_assert_eq(get_sign("-5"), '-');
+    cr_assert_eq(get_sign("-5"), -1);
 }
 
 Test(get_sign, double_negative)
 {
-    cr_assert_eq(get_sign("--6"), '+');
+    cr_assert_eq(get_sign("--6"), 1);
 }
 
 Test(get_sign, triple_negative)
 {
-    cr_assert_eq(get_sign("---8"), '-');
+    cr_assert_eq(get_sign("---8"), -1);
 }
 
 Test(get_sign, quad_negative)
 {
-    cr_assert_eq(get_sign("----9"), '+');
+    cr_assert_eq(get_sign("----9"), 1);
 }
 
 Test(get_sign, implicit_positive)
 {
-    cr_assert_eq(get_sign("5"), '+');
+    cr_assert_eq(get_sign("5"), 1);
 }
 
 Test(get_sign, positive)
 {
-    cr_assert_eq(get_sign("+3"), '+');
+    cr_assert_eq(get_sign("+3"), 1);
 }
 
 Test(get_sign, double_positive)
 {
-    cr_assert_eq(get_sign("++3"), '+');
+    cr_assert_eq(get_sign("++3"), 1);
 }
 
 Test(get_sign, alternate)
 {
-    cr_assert_eq(get_sign("+-+-++-+-7"), '+');
+    cr_assert_eq(get_sign("+-+-++-+-7"), 1);
 }
 
 Test(get_sign, alternate_v2)
 {
-    cr_assert_eq(get_sign("++-++-+-+6"), '-');
+    cr_assert_eq(get_sign("++-++-+-+6"), -1);
 }

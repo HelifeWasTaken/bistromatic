@@ -15,7 +15,7 @@ Test(get_global_sign, negative_and_positive)
 
 Test(get_global_sign, positive_and_positive)
 {
-    cr_assert_eq(get_global_sign("4", "5"), '-');
+    cr_assert_eq(get_global_sign("4", "5"), '+');
 }
 
 Test(get_global_sign, positive_and_negative)
@@ -25,5 +25,5 @@ Test(get_global_sign, positive_and_negative)
 
 Test(get_global_sign, negative_and_negative)
 {
-    cr_assert_eq(get_global_sign("-4", "-5"), '-');
+    cr_assert_eq(get_global_sign("-4", "-5"), '+');
 }

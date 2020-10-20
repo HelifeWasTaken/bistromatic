@@ -8,7 +8,7 @@
 #include <my_str.h>
 #include <stdlib.h>
 
-char *fill_left_with_zeros(char *s1, char *s2)
+char *fill_of_zero(char *s1, char *s2)
 {
     char *to_fill = malloc(sizeof(char) * my_strlen(s1) + 1);
     int i;

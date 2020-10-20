@@ -2,3 +2,5 @@
 *.o
 *.a
 *.out
+calc_test
+calc
