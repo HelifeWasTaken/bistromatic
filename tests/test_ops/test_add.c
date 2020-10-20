@@ -8,7 +8,7 @@
 #include <criterion/criterion.h>
 #include <my_numformat.h>
 
-char my_add(char *s1, char *s2);
+char *my_add(char *s1, char *s2);
 
 Test(my_add, simple_add)
 {

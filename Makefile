@@ -23,7 +23,8 @@ SRC_TEST 	= 	my_add.c \
 				tests/numformat/test_is_first_smaller.c \
 				tests/numformat/test_get_sign.c \
 				tests/numformat/test_remove_sign.c \
-				tests/test_ops/test_sub.c
+				tests/test_ops/test_sub.c \
+				tests/test_ops/test_add.c
 
 TEST_FLAGS 	= 	-g3 -lcriterion --coverage
 
