@@ -11,20 +11,17 @@
 Test(fill_of_zero, fill_a_single_digit)
 {
     char *s1 = my_strdup("43");
-    char *s2 = my_strdup("5");
-    cr_assert_str_eq(fill_of_zero(s1, s2), "50");
+    cr_assert_str_eq(fill_of_zero(s1, 3), "430");
 }
 
 Test(fill_of_zero, fill_multiple_digits)
 {
-    char *s1 = my_strdup("445");
-    char *s2 = my_strdup("54");
-    cr_assert_str_eq(fill_of_zero(s1, s2), "540");
+    char *s1 = my_strdup("54");
+    cr_assert_str_eq(fill_of_zero(s1, 3), "540");
 }
 
 Test(fill_of_zero, fill_numbers_of_same_length)
 {
-    char *s1 = my_strdup("445");
-    char *s2 = my_strdup("545");
-    cr_assert_str_eq(fill_of_zero(s1, s2), "545");
+    char *s1 = my_strdup("545");
+    cr_assert_str_eq(fill_of_zero(s1, 3), "545");
 }

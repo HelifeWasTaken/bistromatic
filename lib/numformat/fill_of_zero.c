@@ -5,17 +5,25 @@
 ** sign_remover
 */
 
+#include <my_stdlib.h>
 #include <my_str.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-char *fill_of_zero(char *s1, char *s2)
+char *fill_of_zero(char *str, int n)
 {
-    char *to_fill = malloc(sizeof(char) * my_strlen(s1) + 1);
-    int i;
+    int size = my_strlen(str);
+    char *to_fill = malloc(sizeof(char) * (n + 1));
+    int i = 0;
 
-    my_strcpy(to_fill, s2);
-    for (i = my_strlen(s2); i < my_strlen(s1); i++)
+    while (i < size) {
+        to_fill[i] = str[i];
+        i++;
+    }
+    while (i < n) {
         to_fill[i] = '0';
+        i++;
+    }
     to_fill[i] = '\0';
     return (to_fill);
 }
