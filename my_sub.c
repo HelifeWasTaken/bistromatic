@@ -53,6 +53,6 @@ char *my_sub(char *s1, char *s2)
     }
     answer = my_revstr(my_get_sub(my_revstr(s1), my_revstr(s2)));
     if (has_been_swaped)
-        answer = my_put_in_str(answer, 0, '-');
-    return (answer);
+        return (my_put_in_str(my_revstr(answer), 0, '-'));
+    return (my_revstr(answer));
 }
