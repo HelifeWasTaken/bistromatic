@@ -41,7 +41,7 @@ char *my_sub(char *s1, char *s2)
 
     s1 = remove_sign(s1);
     s2 = remove_sign(s2);
-    if (get_lowest(s2)) {
+    if (is_first_smaller(s1 ,s2)) {
         my_pointer_swap((void **)&s1, (void **)&s2);
         has_been_swaped = 1;
     }
