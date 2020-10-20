@@ -28,6 +28,7 @@ static char *my_get_add(char *s1_rev, char *s2_rev)
     int i = 0;
     int remain = 0;
 
+    my_bzero(ans, my_strlen(s2_rev) + 2);
     ans[my_strlen(s2_rev) + 2] = '\0';
     while (s2_rev[i]) {
         ans[i] = compute_add(s1_rev[i] - '0', s2_rev[i] - '0', &remain);
@@ -40,6 +41,8 @@ static char *my_get_add(char *s1_rev, char *s2_rev)
 
 char *my_add(char *s1, char *s2)
 {
+    s1 = remove_sign(s1);
+    s2 = remove_sign(s2);
     if (my_strlen(s1) != my_strlen(s2)) {
         if (my_strlen(s1) > my_strlen(s2))
             s2 = fill_of_zero(s1, s2);
