@@ -25,5 +25,6 @@ char *my_put_in_str(char *str, int index, char to_add)
         pushed[size_to_push] = str[size_to_push];
         size_to_push--;
     }
+    free(str);
     return (pushed);
 }

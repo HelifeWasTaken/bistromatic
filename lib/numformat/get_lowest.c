@@ -7,5 +7,5 @@
 
 int get_lowest(char const *str)
 {
-    return (*str != '-');
+    return (*str == '-');
 }

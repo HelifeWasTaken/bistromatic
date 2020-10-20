@@ -10,20 +10,20 @@
 
 Test(get_lowest, negative)
 {
-    cr_assert_eq(get_lowest("-30"), 0);
+    cr_assert_eq(get_lowest("-30"), 1);
 }
 
 Test(get_lowest, positive)
 {
-    cr_assert_eq(get_lowest("+43"), 1);
+    cr_assert_eq(get_lowest("+43"), 0);
 }
 
 Test(get_lowest, negative_v2)
 {
-    cr_assert_eq(get_lowest("-5"), 0);
+    cr_assert_eq(get_lowest("-5"), 1);
 }
 
 Test(get_lowest, positive_v2)
 {
-    cr_assert_eq(get_lowest("+3"), 1);
+    cr_assert_eq(get_lowest("+3"), 0);
 }

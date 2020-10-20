@@ -16,12 +16,13 @@ SRC 		=	main.c \
 				calculations.c \
 				my_get_sign.c
 
-SRC_TEST 	= 	tests/numformat/test_fill_of_zero.c \
+SRC_TEST 	= 	my_add.c \
+				my_sub.c \
+				tests/numformat/test_fill_of_zero.c \
 				tests/numformat/test_get_global_sign.c \
 				tests/numformat/test_get_lowest.c \
 				tests/numformat/test_get_sign.c \
-				tests/numformat/test_remove_sign.c \
-				tests/test_ops/test_mult.c
+				tests/numformat/test_remove_sign.c
 
 TEST_FLAGS 	= 	-g3 -lcriterion --coverage
 

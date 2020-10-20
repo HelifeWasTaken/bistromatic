@@ -31,7 +31,7 @@ build_lib: 	$(OBJ)
 copy:
 	cp $(NAME) ../
 	mkdir -p ../../include
-	cp my_num_format.h ../../include
+	cp my_numformat.h ../../include
 
 clean:
 	rm -rf $(OBJ)

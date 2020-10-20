@@ -7,6 +7,7 @@
 
 #include <my_str.h>
 #include <stdlib.h>
+#include <my_numformat.h>
 
 static char compute_add(int a, int b, int *remain)
 {
@@ -45,5 +46,5 @@ char *my_add(char *s1, char *s2)
         else
             s1 = fill_of_zero(s1, s1);
     }
-    return (my_strdup(my_get_add(my_revstr(s1), my_revstr(s2))));
+    return ((my_get_add(my_revstr(s1), my_revstr(s2))));
 }
