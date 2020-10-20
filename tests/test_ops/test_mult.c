@@ -16,24 +16,24 @@ Test(my_mult, high_numbered_mult)
 
 Test(my_mult, high_low_nubered)
 {
-    cr_assert_eq(my_mult("5", "6"), "03");
+    cr_assert_eq(my_mult("5", "6"), "30");
 }
 
 Test(my_mult, one_low_neg_numbered)
 {
-    cr_assert_eq(my_mult("2843", "02-"), "04696-");
+    cr_assert_eq(my_mult("2843", "02-"), "-69640");
 }
 
 Test(my_mult, two_neg_number)
 {
-    cr_assert_eq(my_mult("-003", "-054"), "000531");
+    cr_assert_eq(my_mult("-003", "-054"), "135000");
 }
 
 Test(my_mult, high_numbered_mult_neg)
 {
-    cr_assert_eq(my_mult("0000000005-", "2000000000"), "00000000001-");
+    cr_assert_eq(my_mult("0000000005-", "2000000000"), "-10000000000");
 }
 Test(my_mult, high_numbered_mult_two_neg)
 {
-    cr_assert_eq(my_mult("0000000005-", "2000000000-"), "00000000001");
+    cr_assert_eq(my_mult("0000000005-", "2000000000-"), "10000000000");
 }
