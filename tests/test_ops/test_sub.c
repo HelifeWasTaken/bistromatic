@@ -8,6 +8,7 @@
 #include <criterion/criterion.h>
 #include <my_str.h>
 #include <my_numformat.h>
+#include <my_stdlib.h>
 
 char *my_sub(char const *s1, char const *s2);
 
