@@ -39,6 +39,8 @@ char *my_sub(char *s1, char *s2)
     int has_been_swaped = 0;
     char *answer = NULL;
 
+    s1 = remove_sign(s1);
+    s2 = remove_sign(s2);
     if (get_lowest(s2)) {
         my_pointer_swap((void **)&s1, (void **)&s2);
         has_been_swaped = 1;

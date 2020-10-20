@@ -9,6 +9,8 @@
 #include <my_str.h>
 #include <my_numformat.h>
 
+char *my_mult(char *s1, char *s2);
+
 Test(my_mult, high_numbered_mult)
 {
     cr_assert_eq(my_mult("0000000005", "2000000000"), "10000000000");

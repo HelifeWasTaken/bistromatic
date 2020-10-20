@@ -9,6 +9,8 @@
 #include <my_str.h>
 #include <my_numformat.h>
 
+char *my_sub(char const *s1, char const *s2);
+
 Test(my_sub, five_minus_five)
 {
     cr_assert_eq(my_sub("5", "5"), "0");
