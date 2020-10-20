@@ -41,7 +41,7 @@ char *my_sub(char *s1, char *s2)
 
     s1 = remove_sign(s1);
     s2 = remove_sign(s2);
-    if (is_first_smaller(s1, my_strlen(s2))) {
+    if (is_first_smaller(s1, s2)) {
         my_pointer_swap((void **)&s1, (void **)&s2);
         has_been_swaped = 1;
     }
@@ -53,6 +53,6 @@ char *my_sub(char *s1, char *s2)
     }
     answer = my_revstr(my_get_sub(my_revstr(s1), my_revstr(s2)));
     if (has_been_swaped)
-        answer = my_put_in_str(answer, 0, '-');
-    return (answer);
+        return (my_put_in_str(my_revstr(answer), 0, '-'));
+    return (my_revstr(answer));
 }

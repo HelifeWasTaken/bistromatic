@@ -44,11 +44,9 @@ char *my_add(char *s1, char *s2)
 {
     s1 = remove_sign(s1);
     s2 = remove_sign(s2);
-    if (my_strlen(s1) != my_strlen(s2)) {
-        if (my_strlen(s1) > my_strlen(s2))
-            s2 = fill_of_zero(s1, s2);
-        else
-            s1 = fill_of_zero(s1, s1);
-    }
+
+    if (my_strlen(s1) < my_strlen(s2))
+        my_pointer_swap((void **)&s1, (void **)&s2);
+    s2 = fill_of_zero(s2, my_strlen(s1));
     return (my_revstr(my_get_add(my_revstr(s1), my_revstr(s2))));
 }
