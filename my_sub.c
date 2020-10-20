@@ -46,9 +46,9 @@ char *my_sub(char *s1, char *s2)
         if (my_strlen(s1) > my_strlen(s2))
             s2 = fill_of_zero(s1, s2);
         else
-            s1 = fill_of_zero(s1, s1);
+            s1 = fill_of_zero(s2, s1);
     }
-    answer = my_revstr(my_get_sub(my_revstr(s1), my_revstr(s2))));
+    answer = my_revstr(my_get_sub(my_revstr(s1), my_revstr(s2)));
     if (has_been_swaped)
         answer = my_put_in_str(answer, 0, '-');
     return (answer);
