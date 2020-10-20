@@ -6,6 +6,7 @@
 */
 
 #include <my_str.h>
+#include <stdlib.h>
 
 char *fill_left_with_zeros(char *s1, char *s2)
 {
