@@ -13,7 +13,7 @@ CFLAGS 		=	-W -Wall -Wextra -pedantic -Werror -I../my/include/
 
 SRC 		=   fill_of_zero.c \
                 get_global_sign.c \
-				get_lowest.c \
+				is_first_smaller.c \
 				get_sign.c \
 				remove_sign.c
 
