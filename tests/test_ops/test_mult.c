@@ -1,6 +1,9 @@
-
-
-
+/*
+** EPITECH PROJECT, 2020
+** test_mult
+** File description:
+** mult test
+*/
 
 #include <criterion/criterion.h>
 #include <my_str.h>
