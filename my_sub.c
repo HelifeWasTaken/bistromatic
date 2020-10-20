@@ -8,6 +8,7 @@
 #include <my_str.h>
 #include <my_stdlib.h>
 #include <stdlib.h>
+#include <my_numformat.h>
 
 static char compute_my_sub(int a, int b, int *remain)
 {

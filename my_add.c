@@ -7,6 +7,7 @@
 
 #include <my_str.h>
 #include <stdlib.h>
+#include <my_numformat.h>
 
 static char compute_add(int a, int b, int *remain)
 {
