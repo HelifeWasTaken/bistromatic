@@ -9,7 +9,7 @@ CC			=	gcc
 
 AR 			= 	ar rc
 
-CFLAGS 		=	-W -Wall -Wextra -pedantic -Werror -I./include
+CFLAGS 		=	-W -Wall -Wextra -pedantic -Werror -I../my/include/
 
 SRC 		=   fill_of_zero.c \
                 get_global_sign.c \

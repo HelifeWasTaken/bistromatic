@@ -5,23 +5,23 @@
 ## A sample of a Makefile to start Epitech
 ##
 
-all:		$(NAME)
-
-$(NAME):	build_libmy build_numformat
+all: 		build_libmy build_numformat
 
 build_libmy:
-	make -C ./my/
+	make -C my/
+	@echo
 
 build_numformat:
-	make -C ./num_format/
+	make -C numformat/
+	@echo
 
 clean:
 	make clean -C ./my/
-	make clean -C ./num_format/
+	make clean -C ./numformat/
 
 fclean:
 	make fclean -C ./my/
-	make fclean -C ./num_format/
+	make fclean -C ./numformat/
 
 re:			fclean all
 
