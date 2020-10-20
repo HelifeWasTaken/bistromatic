@@ -4,6 +4,7 @@
 ** File description:
 ** get_lowest_number
 */
+#include <my_str.h>
 
 int is_first_smaller(char const *s1, char const *s2)
 {
