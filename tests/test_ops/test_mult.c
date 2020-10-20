@@ -8,7 +8,7 @@
 
 Test(my_mult, high_numbered_mult)
 {
-    cr_assert_eq(my_mult("0000000005", "2000000000"), "00000000001");
+    cr_assert_eq(my_mult("0000000005", "2000000000"), "10000000000");
 }
 
 Test(my_mult, high_low_nubered)

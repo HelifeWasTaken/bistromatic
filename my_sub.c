@@ -8,9 +8,8 @@
 #include <my_str.h>
 #include <my_stdlib.h>
 #include <stdlib.h>
-#include <stdio.h>
 
-char compute_my_sub(int a, int b, int *remain)
+static char compute_my_sub(int a, int b, int *remain)
 {
     int temp = a - (b + *remain);
 
