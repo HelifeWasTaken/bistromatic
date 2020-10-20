@@ -20,7 +20,7 @@ SRC_TEST 	= 	my_add.c \
 				my_sub.c \
 				tests/numformat/test_fill_of_zero.c \
 				tests/numformat/test_get_global_sign.c \
-				tests/numformat/test_get_lowest.c \
+				tests/numformat/test_is_first_smaller.c \
 				tests/numformat/test_get_sign.c \
 				tests/numformat/test_remove_sign.c \
 				tests/test_ops/test_sub.c
