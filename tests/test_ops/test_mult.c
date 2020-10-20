@@ -7,7 +7,7 @@
 
 #include <criterion/criterion.h>
 #include <my_str.h>
-#include "../../lib/numformat/my_num_format.h"
+#include <my_numformat.h>
 
 Test(my_mult, high_numbered_mult)
 {
