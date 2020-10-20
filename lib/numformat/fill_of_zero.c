@@ -27,7 +27,6 @@ char *fill_of_zero(char *str, int n)
         i++;
         j++;
     }
-    
     to_fill[i] = '\0';
     return (to_fill);
 }
