@@ -9,28 +9,44 @@ CC			=	gcc
 
 CFLAGS 		=	-W -Wall -Wextra -pedantic -I./include
 
-LFLAGS 		=	-L./lib -lmy -lnumformat
+LFLAGS 		=	-L./lib -lmy
 
-SRC 		=	main.c \
-				do_op.c \
-				calculations.c \
-				my_get_sign.c
+SRC 		=	source/operations/main.c \
+				source/operations/do_op.c \
+				source/operations/calculations.c \
+				source/operations/my_get_sign.c \
+				\
+				source/numformat/fill_of_zero.c \
+                source/numformat/get_global_sign.c \
+				source/numformat/is_first_smaller.c \
+				source/numformat/get_sign.c \
+				source/numformat/remove_sign.c \
+				source/numformat/str_cleaner.c
 
-SRC_TEST 	= 	my_add.c \
-				my_sub.c \
+
+
+SRC_TEST 	= 	source/operations/my_add.c \
+				source/operations/my_sub.c \
+				\
+				source/numformat/fill_of_zero.c \
+                source/numformat/get_global_sign.c \
+				source/numformat/is_first_smaller.c \
+				source/numformat/get_sign.c \
+				source/numformat/remove_sign.c \
+				source/numformat/str_cleaner.c \
+				\
 				tests/numformat/test_fill_of_zero.c \
 				tests/numformat/test_get_global_sign.c \
 				tests/numformat/test_is_first_smaller.c \
 				tests/numformat/test_get_sign.c \
 				tests/numformat/test_remove_sign.c \
+				tests/numformat/test_str_cleaner.c \
 				tests/test_ops/test_sub.c \
-				tests/test_ops/test_add.c
+				tests/test_ops/test_add.c \
 
-TEST_FLAGS 	= 	-g3 -lcriterion --coverage
+TEST_FLAGS 	= 	-l criterion --coverage
 
 OBJ 		=	$(SRC:.c=.o)
-
-OBJ_TEST 	= 	$(SRC_TEST:.c=.o)
 
 EXEC 		=	calc
 
@@ -41,7 +57,7 @@ all:		$(EXEC)
 $(EXEC):	build_lib build
 
 build_lib:
-	make -C ./lib/
+	make -C ./lib/my
 
 build: $(OBJ)
 	$(CC) $(OBJ) $(CFLAGS) $(LFLAGS) -o $(EXEC)
@@ -52,14 +68,13 @@ clean:
 fclean:		clean clean_test
 	rm -f $(EXEC)
 
-test:	clean_test build_lib test_run
+tests_run:	clean_test build_lib
+	$(CC) $(SRC_TEST) $(CFLAGS) $(TEST_FLAGS) $(LFLAGS) -o $(EXEC_TEST)
+	./$(EXEC_TEST) --verbose
 
 clean_test:
-	rm -rf $(OBJ_TEST) $(EXEC_TEST)
-
-test_run: $(OBJ_TEST)
-	$(CC) $(OBJ_TEST) $(CFLAGS) $(TEST_FLAGS) $(LFLAGS) -o $(EXEC_TEST)
+	rm -rf $(EXEC_TEST)
 
 re:			fclean all
 
-.PHONY:		all build clean fclean re
+.PHONY:		all build clean fclean re tests_run

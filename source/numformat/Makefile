@@ -9,13 +9,13 @@ CC			=	gcc
 
 AR 			= 	ar rc
 
-CFLAGS 		=	-W -Wall -Wextra -pedantic -Werror -I../my/include/
+CFLAGS 		=	-W -Wall -Wextra -pedantic -Werror -I../../include/ -L../ -lmy
 
 SRC 		=   fill_of_zero.c \
                 get_global_sign.c \
 				is_first_smaller.c \
 				get_sign.c \
-				remove_sign.c
+				remove_sign.c \
 
 OBJ 		=	$(SRC:.c=.o)
 

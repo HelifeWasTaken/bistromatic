@@ -36,3 +36,13 @@ Test(my_sub, sub_high_numbered_neg)
 {
     cr_assert_str_eq(my_sub(my_strdup("5858"), my_strdup("45005")), "-39147");
 }
+
+Test(my_sub, right_has_less_digits_than_left)
+{
+    cr_assert_str_eq(my_sub(my_strdup("2"), my_strdup("690")), "-688");
+}
+
+Test(my_sub, left_has_less_digits_than_right)
+{
+    cr_assert_str_eq(my_sub(my_strdup("2895"), my_strdup("6")), "2889");
+}

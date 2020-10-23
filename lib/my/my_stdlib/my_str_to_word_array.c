@@ -55,6 +55,6 @@ char **my_str_to_word_array(char const *str)
         else
             i++;
     }
-    answer[count] = '\0';
+    answer[count] = NULL;
     return (answer);
 }
