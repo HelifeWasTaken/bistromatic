@@ -15,7 +15,7 @@ char *transform_to_base_10(char const *raw_str, char const *num_base,
     int j = 0;
     char op[8] = "()+-*/%";
     char *str = my_strdup(raw_str);
-    
+
     for (int i = 0; raw_str[i]; i++) {
         for (j = 0; num_base[j] && num_base[j] != str[i]; j++);
         if (j < 10) {

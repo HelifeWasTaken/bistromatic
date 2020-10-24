@@ -31,7 +31,7 @@ static char *my_get_sub(char *rev_s1, char *rev_s2)
     my_bzero(answer, my_strlen(rev_s1));
     for (int i = 0; rev_s1[i]; i++)
         answer[i] = compute_my_sub(rev_s1[i] - '0', rev_s2[i] - '0', &remain);
-    return(my_revstr(answer));
+    return (my_revstr(answer));
 }
 
 char *my_sub(char *s1, char *s2)
