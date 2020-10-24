@@ -11,22 +11,22 @@ CFLAGS 		=	-W -Wall -Wextra -pedantic -I./include
 
 LFLAGS 		=	-L./lib -lmy
 
-SRC 		=	source/operations/main.c \
+SRC 		=   main.c \
+				\
+				source/operations/main.c \
 				source/operations/do_op.c \
 				source/operations/calculations.c \
 				source/operations/my_get_sign.c \
+				source/operations/my_add.c \
+				source/operations/my_sub.c \
+				source/operations/my_mul.c \
 				\
 				source/numformat/fill_of_zero.c \
                 source/numformat/get_global_sign.c \
 				source/numformat/is_first_smaller.c \
 				source/numformat/get_sign.c \
 				source/numformat/remove_sign.c \
-				source/numformat/str_cleaner.c \
-				source/numformat/is_zero.c \
-				source/numformat/powten.c \
-				source/numformat/remove_trailing_zeroes.c
-
-
+				source/numformat/str_cleaner.c
 
 SRC_TEST 	= 	source/operations/my_add.c \
 				source/operations/my_sub.c \
@@ -41,7 +41,9 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				source/numformat/transform_base.c \
 				source/numformat/is_zero.c \
 				source/numformat/powten.c \
-				source/numformat/remove_trailing_zeroes.c \
+				source/numformat/check_arithmetic_logic.c \
+				source/numformat/error_check.c \
+				source/numformat/is_an_operator.c \
 				\
 				tests/numformat/test_fill_of_zero.c \
 				tests/numformat/test_get_global_sign.c \
@@ -51,11 +53,13 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				tests/numformat/test_str_cleaner.c \
 				tests/numformat/test_putnbr_base.c \
 				tests/numformat/test_powten.c \
+				tests/numformat/test_error_handling.c \
+				tests/numformat/test_is_zero.c \
 				\
 				tests/numformat/test_transform_base.c \
 				tests/test_ops/test_sub.c \
 				tests/test_ops/test_add.c \
-				tests/test_ops/test_mul.c \
+				tests/test_ops/test_mul.c
 
 TEST_FLAGS 	= 	-l criterion --coverage
 

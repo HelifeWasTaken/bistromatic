@@ -18,4 +18,9 @@ char *transform_to_base_10(char const *raw_str, char const *op_base,
 int is_zero(char const *str);
 char *powten(char *str, int count);
 char *remove_trailing_zeroes(char *str);
+int error_check(char const *str);
+int is_an_operator(char const c);
+int check_arithmetic_logic(char const *str);
+int check_str_validity(char const *str);
+int check_nb_parentheses(char const *str);
 #endif

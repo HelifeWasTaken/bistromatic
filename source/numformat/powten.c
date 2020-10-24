@@ -15,6 +15,7 @@ static char *pop_tens(char *str, int count)
     int size = my_strlen(str);
     char *newstr = malloc(sizeof(char) * (size + 1));
     int i = 0;
+
     while (str[i] != '\0') {
         newstr[i] = str[i];
         i++;
@@ -33,6 +34,7 @@ char *push_tens(char *str, int count)
     int size = my_strlen(str);
     char *newstr = malloc(sizeof(char) * (size + count + 1));
     int i = 0;
+
     while (str[i] != '\0') {
         newstr[i] = str[i];
         i++;
