@@ -23,12 +23,12 @@ Test(my_mul, high_low_nubered)
 
 Test(my_mul, one_low_neg_numbered)
 {
-    cr_assert_str_eq(my_mul("2843", "-2"), "-69640");
+    cr_assert_str_eq(my_mul("2843", "-2"), "-5686");
 }
 
 Test(my_mul, two_neg_number)
 {
-    cr_assert_str_eq(my_mul("-3", "-54"), "135000");
+    cr_assert_str_eq(my_mul("-3", "-54"), "162");
 }
 
 Test(my_mul, high_numbered_mult_neg)
