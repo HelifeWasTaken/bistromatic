@@ -13,4 +13,6 @@ int get_sign(char const *str);
 char *remove_sign(char const *str);
 int is_first_smaller(char const *s1, char const *s2);
 char *str_cleaner(char *raw_str);
+char *transform_to_base_10(char const *raw_str, char const *op_base,
+                           char const *num_base);
 #endif

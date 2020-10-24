@@ -34,6 +34,7 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				source/numformat/get_sign.c \
 				source/numformat/remove_sign.c \
 				source/numformat/str_cleaner.c \
+				source/numformat/transform_base.c \
 				\
 				tests/numformat/test_fill_of_zero.c \
 				tests/numformat/test_get_global_sign.c \
@@ -41,6 +42,9 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				tests/numformat/test_get_sign.c \
 				tests/numformat/test_remove_sign.c \
 				tests/numformat/test_str_cleaner.c \
+				tests/numformat/test_putnbr_base.c \
+				\
+				tests/numformat/test_transform_base.c \
 				tests/test_ops/test_sub.c \
 				tests/test_ops/test_add.c \
 

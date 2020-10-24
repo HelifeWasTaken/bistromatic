@@ -10,15 +10,15 @@
 #include <my_str.h>
 #include <my_stdio.h>
 
-static char get_sign(char const *str, int **i)
+static char get_sign(char const *str, int *i)
 {
     int sign = 1;
 
-    while (str[**i] == '+' || str[**i] == '-') {
-        if (str[**i] == '-') {
+    while (str[*i] == '+' || str[*i] == '-') {
+        if (str[*i] == '-') {
             sign = -sign;
         }
-        (**i)++;
+        (*i)++;
     }
     if (sign == 1)
         return ('+');
@@ -29,10 +29,9 @@ static char get_next_operator(char const *raw_str, int *i_raw)
 {
     char const high_level_operators[5] = { '/', '*', '%', '(', ')' };
 
-    if (raw_str[*i_raw] == '-' || raw_str[*i_raw] == '+') {
-        return (get_sign(raw_str, &i_raw));
-    }
-    for (int i = 0; i < 5; i++) {
+    if (raw_str[*i_raw] == '-' || raw_str[*i_raw] == '+')
+        return (get_sign(raw_str, i_raw));
+    for (int i = 0; 1; i++) {
         if (raw_str[*i_raw] == high_level_operators[i]) {
             (*i_raw)++;
             return (high_level_operators[i]);
@@ -67,7 +66,7 @@ char *str_cleaner(char *raw_str)
 
     my_bzero(clean_str, my_strlen(raw_str) + 1);
     while (raw_str[i_raw_str]) {
-        if (raw_str[i_raw_str] >= '0' && raw_str[i_raw_str] <= '9') {
+        if (is_num_letter(raw_str[i_raw_str])) {
             clean_str[i_clean_str] = raw_str[i_raw_str];
             i_raw_str++;
         } else {
