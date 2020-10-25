@@ -18,7 +18,7 @@ char *op_parser(char *s1, char *s2, char operator)
         {'*', &my_mul},
         {'\0', 0}
     };
-    char *(*calc_func)(char *, char *);
+    char *(*calc_func)(char const *, char const *);
     for (int i = 0; array_ops[i].calculation_process != 0; i++) {
         if (array_ops[i].operation == operator) {
             calc_func = array_ops[i].calculation_process;

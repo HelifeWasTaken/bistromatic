@@ -6,6 +6,7 @@
 */
 
 #include <my_str.h>
+#include <my_stdlib.h>
 #include <stdlib.h>
 #include <my_numformat.h>
 #include <my_stdlib.h>
@@ -43,30 +44,32 @@ static char *my_get_add(char *s1_rev, char *s2_rev)
 
 char *my_add(char const *s1, char const *s2)
 {
-    int add_minus = (*s1 == '-' && *s2 == '-');
+    char *s1_dup = my_strdup(s1);
+    char *s2_dup = my_strdup(s2);
+    int add_minus = (get_sign(s1_dup) == -1);
     char *result = NULL;
 
-    if (get_sign(s1) != get_sign(s2))
-        return (my_add_exception(s1, s2));
-    s1 = remove_sign(my_strdup(s1));
-    s2 = remove_sign(my_strdup(s2));
-    if (my_strlen(s1) < my_strlen(s2))
-        my_pointer_swap((void **)&s1, (void **)&s2);
-    s2 = fill_of_zero(s2, my_strlen(s1));
-    result = my_revstr(my_get_add(my_revstr(s1), my_revstr(s2)));
-    free(s1);
-    free(s2);
+    if (get_sign(s1_dup) != get_sign(s2_dup))
+        return (my_add_exception(s1_dup, s2_dup));
+    s1_dup = remove_sign(s1_dup);
+    s2_dup = remove_sign(s2_dup);
+    if (my_strlen(s1_dup) < my_strlen(s2_dup))
+        my_pointer_swap((void **)&s1_dup, (void **)&s2_dup);
+    s2_dup = fill_of_zero(s2_dup, my_strlen(s1_dup));
+    result = my_revstr(my_get_add(my_revstr(s1_dup), my_revstr(s2_dup)));
+    free(s1_dup);
+    free(s2_dup);
     if (!add_minus || *result == '0')
         return (result);
     return (my_put_in_str(result, 0, '-'));
 }
 
-char *my_add_exception(char const *s1, char const *s2)
+char *my_add_exception(char *s1, char *s2)
 {
     if (get_sign(s1) == -1) {
-        s1 = remove_sign(my_strdup(s1));
+        s1 = remove_sign(s1);
         return (invert_sign(my_sub(s1, s2)));
     }
-    s2 = remove_sign(my_strdup(s2));
+    s2 = remove_sign(s2);
     return (my_sub(s1, s2));
 }

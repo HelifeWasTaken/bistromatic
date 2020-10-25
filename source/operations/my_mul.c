@@ -45,15 +45,17 @@ char *my_mul_compute(char *s1, char *s2)
 
 char *my_mul(char const *s1, char const *s2)
 {
+    char *s1_dup = my_strdup(s1);
+    char *s2_dup = my_strdup(s2);
     char *answer = NULL;
-    int is_negative = (get_global_sign(s1, s2) == '-');
+    int is_negative = (get_global_sign(s1_dup, s2_dup) == '-');
 
-    s1 = remove_sign(my_strdup(s1));
-    s2 = remove_sign(my_strdup(s2));
-    answer = my_mul_compute(s1, s2);
+    s1_dup = remove_sign(s1_dup);
+    s2_dup = remove_sign(s2_dup);
+    answer = my_mul_compute(s1_dup, s2_dup);
     if (is_negative)
         answer = my_put_in_str(answer, 0, '-');
-    free(s1);
-    free(s2);
+    free(s1_dup);
+    free(s2_dup);
     return (answer);
 }
