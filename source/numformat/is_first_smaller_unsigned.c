@@ -14,7 +14,7 @@ bool is_first_smaller_unsigned(char const *s1, char const *s2)
     int len_s1 = my_strlen(s1);
     int len_s2 = my_strlen(s2);
     int i = 0;
-    
+
     if (len_s1 != len_s2)
         return (len_s1 < len_s2);
     while (s1[i] != '\0') {

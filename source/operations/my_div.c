@@ -24,7 +24,7 @@ char *my_get_div(char *s1, char *s2) {
         nearest = my_mul(s2, dividend);
         remaining = my_sub(s1, nearest);
         printf("dividend = %s, remaining = %s, mult = %s\n", dividend, remaining, my_mul(s2, dividend));
-    } while(is_first_smaller(s2, remaining));
+    } while (is_first_smaller(s2, remaining));
     free(remaining);
     return (dividend);
 }

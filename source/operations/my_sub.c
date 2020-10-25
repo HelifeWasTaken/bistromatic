@@ -60,7 +60,7 @@ char *my_sub(char *s1, char *s2)
 
 char *my_sub_exception(char *s1, char *s2)
 {
-    if(get_sign(s1) == -1) {
+    if (get_sign(s1) == -1) {
         s1 = invert_sign(s1);
         return (invert_sign(my_add(s1, s2)));
     }

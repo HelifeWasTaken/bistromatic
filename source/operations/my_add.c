@@ -63,7 +63,7 @@ char *my_add(char *s1, char *s2)
 
 char *my_add_exception(char *s1, char *s2)
 {
-    if(get_sign(s1) == -1) {
+    if (get_sign(s1) == -1) {
         s1 = remove_sign(s1);
         return (invert_sign(my_sub(s1, s2)));
     }
