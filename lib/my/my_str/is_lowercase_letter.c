@@ -5,7 +5,9 @@
 ** lower
 */
 
-int is_lowercase_letter(char const c)
+#include <stdbool.h>
+
+bool is_lowercase_letter(char const c)
 {
     return (c >= 'a' && c <= 'z');
 }

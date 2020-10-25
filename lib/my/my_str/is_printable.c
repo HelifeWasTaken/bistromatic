@@ -5,7 +5,9 @@
 ** detect if a strin only alphanumerics
 */
 
-int is_printable(char const c)
+#include <stdbool.h>
+
+bool is_printable(char const c)
 {
     return (c >= 32 && c <= 126);
 }

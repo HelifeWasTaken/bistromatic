@@ -5,7 +5,9 @@
 ** num_letter
 */
 
-int is_num_letter(char const c)
+#include <stdbool.h>
+
+bool is_num_letter(char const c)
 {
     return (c >= '0' && c <= '9');
 }

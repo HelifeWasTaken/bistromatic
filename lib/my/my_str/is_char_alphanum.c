@@ -5,11 +5,13 @@
 ** detect if a char is alphanum
 */
 
-int is_num_letter(char const c);
+#include <stdbool.h>
 
-int is_an_alpha_letter(char const c);
+bool is_num_letter(char const c);
 
-int is_char_alphanum(char const c)
+bool is_an_alpha_letter(char const c);
+
+bool is_char_alphanum(char const c)
 {
     return (is_an_alpha_letter(c) || is_num_letter(c));
 }

@@ -7,13 +7,14 @@
 
 #ifndef _MY_STR_H_
 #define _MY_STR_H_
+#include <stdbool.h>
 char *concat_params(int argc, char **argv);
-int is_an_alpha_letter(char const c);
-int is_capital_letter(char const c);
-int is_lowercase_letter(char const c);
-int is_num_letter(char const c);
-int is_printable(char const c);
-int is_char_alphanum(char const c);
+bool is_an_alpha_letter(char const c);
+bool is_capital_letter(char const c);
+bool is_lowercase_letter(char const c);
+bool is_num_letter(char const c);
+bool is_printable(char const c);
+bool is_char_alphanum(char const c);
 int my_len_str_array(int nb_elements, char **array);
 char *my_put_in_str(char *str, int index, char to_add);
 char *my_revstr(char *str);

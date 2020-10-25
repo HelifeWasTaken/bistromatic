@@ -11,7 +11,7 @@ void *my_memset(void *data, int filler, int size)
 
     if (!data)
         return ((void *)0);
-    while (*pointer_filler && size > 0) {
+    while (size) {
         *pointer_filler = filler;
         pointer_filler++;
         size--;

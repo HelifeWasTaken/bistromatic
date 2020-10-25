@@ -5,12 +5,9 @@
 ** captialize every first letter of each word
 */
 
-int is_char_alphanum(char const c);
+#include <stdbool.h>
 
-static int is_in_word(char const c)
-{
-    return (is_char_alphanum(c));
-}
+bool is_char_alphanum(char const c);
 
 static char change_str_captial(char str, int state)
 {
@@ -23,23 +20,23 @@ static char change_str_captial(char str, int state)
 
 char *my_strcapitalize(char *str)
 {
-    int in_word = 0;
+    bool in_word = false;
     int i = 0;
     int state = 0;
 
     while (str[i]) {
-        if (in_word && is_in_word(str[i])) {
+        if (in_word && is_char_alphanum(str[i])) {
             state = 2;
             str[i] = change_str_captial(str[i], state);
         }
-        if (!in_word && is_in_word(str[i])) {
-            in_word = 1;
+        if (!in_word && is_char_alphanum(str[i])) {
+            in_word = true;
             state = 1;
             str[i] = change_str_captial(str[i], state);
         }
         i++;
-        if (str[i] && in_word && !is_in_word(str[i]))
-            in_word = 0;
+        if (str[i] && in_word && !is_char_alphanum(str[i]))
+            in_word = false;
     }
     return (str);
 }

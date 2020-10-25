@@ -5,19 +5,21 @@
 ** count_the_numbers_of_words_in_a_string
 */
 
-int is_char_alphanum(char const c);
+#include <stdbool.h>
+
+bool is_char_alphanum(char const c);
 
 int my_word_count(char const *str)
 {
     int count = 0;
-    int state = 0;
+    bool state = false;
 
     for (int i = 0; str[i]; i++) {
-        if (is_char_alphanum(str[i]) && state == 0) {
-            state = 1;
+        if (is_char_alphanum(str[i]) && !state) {
+            state = true;
             count++;
-        } else if (!(is_char_alphanum(str[i])) && state == 1) {
-            state = 0;
+        } else if (!(is_char_alphanum(str[i])) && state) {
+            state = true;
         }
     }
     return (count);

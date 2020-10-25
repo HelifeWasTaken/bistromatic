@@ -5,32 +5,34 @@
 ** parse numbers
 */
 
-static int detect_overflow(int *nb, int add, int sign)
+#include <stdbool.h>
+
+static bool detect_overflow(int *nb, int add, int sign)
 {
     if (sign == 1) {
         if (*nb + add < 0)
-            return (0);
+            return (false);
         *nb = *nb + add;
-        return (1);
+        return (true);
     }
     if ((*nb + add) * -1 > 0)
-        return (0);
+        return (false);
     *nb = *nb + add;
-    return (1);
+    return (true);
 }
 
-static int detect_sign(char const *str, int *i, int *sign)
+static bool detect_sign(char const *str, int *i, int *sign)
 {
     while (!(str[*i] >= '0' && str[*i] <= '9')) {
         if ((str[*i] == '+' || str[*i] == '-') || str[*i] == ' ') {
             if (str[*i] == '-')
                 *sign *= -1;
         } else {
-            return (0);
+            return (false);
         }
         (*i)++;
     }
-    return (1);
+    return (true);
 }
 
 int my_getnbr(char const *str)

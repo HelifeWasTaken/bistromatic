@@ -5,7 +5,9 @@
 ** capital
 */
 
-int is_capital_letter(char const c)
+#include <stdbool.h>
+
+bool is_capital_letter(char const c)
 {
     return (c >= 'A' && c <= 'Z');
 }
