@@ -48,10 +48,12 @@ char *my_mul(char *s1, char *s2)
     char *answer = NULL;
     int is_negative = (get_global_sign(s1, s2) == '-');
 
-    s1 = remove_sign(s1);
-    s2 = remove_sign(s2);
+    s1 = remove_sign(my_strdup(s1));
+    s2 = remove_sign(my_strdup(s2));
     answer = my_mul_compute(s1, s2);
     if (is_negative)
         answer = my_put_in_str(answer, 0, '-');
+    free(s1);
+    free(s2);
     return (answer);
 }

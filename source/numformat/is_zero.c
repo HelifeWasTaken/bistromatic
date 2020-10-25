@@ -12,7 +12,7 @@ bool is_zero(char const *str)
     int i = 0;
 
     while (str[i]) {
-        if (str[i] != '0')
+        if (str[i] != '0' && str[i] != '-' && str[i] != '+')
             return (false);
         i++;
     }
