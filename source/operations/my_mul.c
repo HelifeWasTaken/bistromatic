@@ -43,7 +43,7 @@ char *my_mul_compute(char *s1, char *s2)
     return (result);
 }
 
-char *my_mul(char *s1, char *s2)
+char *my_mul(char const *s1, char const *s2)
 {
     char *answer = NULL;
     int is_negative = (get_global_sign(s1, s2) == '-');

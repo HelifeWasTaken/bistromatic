@@ -41,7 +41,7 @@ static char *my_get_add(char *s1_rev, char *s2_rev)
     return (ans);
 }
 
-char *my_add(char *s1, char *s2)
+char *my_add(char const *s1, char const *s2)
 {
     int add_minus = (*s1 == '-' && *s2 == '-');
     char *result = NULL;
@@ -61,12 +61,12 @@ char *my_add(char *s1, char *s2)
     return (my_put_in_str(result, 0, '-'));
 }
 
-char *my_add_exception(char *s1, char *s2)
+char *my_add_exception(char const *s1, char const *s2)
 {
     if (get_sign(s1) == -1) {
-        s1 = remove_sign(s1);
+        s1 = remove_sign(my_strdup(s1));
         return (invert_sign(my_sub(s1, s2)));
     }
-    s2 = remove_sign(s2);
+    s2 = remove_sign(my_strdup(s2));
     return (my_sub(s1, s2));
 }

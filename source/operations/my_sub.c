@@ -36,15 +36,15 @@ static char *my_get_sub(char *rev_s1, char *rev_s2)
     return (my_revstr(answer));
 }
 
-char *my_sub(char *s1, char *s2)
+char *my_sub(char const *s1, char const *s2)
 {
     int has_been_swapped = 0;
     char *answer = NULL;
 
     if (get_sign(s1) != get_sign(s2))
         return (my_sub_exception(s1, s2));
-    s1 = remove_sign(s1);
-    s2 = remove_sign(s2);
+    s1 = remove_sign(my_strdup(s1));
+    s2 = remove_sign(my_strdup(s2));
     if (is_first_smaller(s1, s2)) {
         my_pointer_swap((void **)&s1, (void **)&s2);
         has_been_swapped = 1;
@@ -58,12 +58,12 @@ char *my_sub(char *s1, char *s2)
     return (my_revstr(answer));
 }
 
-char *my_sub_exception(char *s1, char *s2)
+char *my_sub_exception(char const *s1, char const *s2)
 {
     if (get_sign(s1) == -1) {
-        s1 = invert_sign(s1);
+        s1 = invert_sign(my_strdup(s1));
         return (invert_sign(my_add(s1, s2)));
     }
-    s2 = invert_sign(s2);
+    s2 = invert_sign(my_strdup(s2));
     return (my_add(s1, s2));
 }
