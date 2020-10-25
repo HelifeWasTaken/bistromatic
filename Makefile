@@ -41,7 +41,9 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				source/numformat/is_first_smaller.c \
 				source/numformat/is_first_smaller_unsigned.c \
 				source/numformat/get_sign.c \
+				source/numformat/remove_trailing_zeroes.c \
 				source/numformat/remove_sign.c \
+				source/numformat/invert_sign.c \
 				source/numformat/str_cleaner.c \
 				source/numformat/transform_base.c \
 				source/numformat/is_zero.c \
@@ -54,6 +56,7 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				tests/numformat/test_get_global_sign.c \
 				tests/numformat/test_is_first_smaller.c \
 				tests/numformat/test_get_sign.c \
+				tests/numformat/test_invert_sign.c \
 				tests/numformat/test_remove_sign.c \
 				tests/numformat/test_str_cleaner.c \
 				tests/numformat/test_putnbr_base.c \
