@@ -25,6 +25,9 @@ SRC 		=   main.c \
 				source/numformat/get_global_sign.c \
 				source/numformat/is_first_smaller.c \
 				source/numformat/is_first_smaller_unsigned.c \
+				source/numformat/is_first_greater.c \
+				source/numformat/is_first_greater_unsigned.c \
+				source/numformat/are_equals.c \
 				source/numformat/get_sign.c \
 				source/numformat/remove_trailing_zeroes.c \
 				source/numformat/remove_sign.c \
@@ -40,6 +43,9 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				source/numformat/get_global_sign.c \
 				source/numformat/is_first_smaller.c \
 				source/numformat/is_first_smaller_unsigned.c \
+				source/numformat/is_first_greater.c \
+				source/numformat/is_first_greater_unsigned.c \
+				source/numformat/are_equals.c \
 				source/numformat/get_sign.c \
 				source/numformat/remove_trailing_zeroes.c \
 				source/numformat/remove_sign.c \
