@@ -19,3 +19,8 @@ Test(is_zero, last_one_is_not_a_zero)
 {
     cr_assert_eq(is_zero("0000003"), false);
 }
+
+Test(is_zero, has_a_plus_and_a_minus_in_it)
+{
+    cr_assert_eq(is_zero("000+0-0"), true);
+}

@@ -15,6 +15,5 @@ bool is_first_smaller(char const *s1, char const *s2)
         return (false);
     if(get_sign(s1) == -1 && get_sign(s2) == 1)
         return (true);
-
     return (is_first_smaller_unsigned(s1, s2));
 }

@@ -5,7 +5,7 @@
 ** Unit tests
 */
 #include <criterion/criterion.h>
-#include <my_str.h>
+#include <my_stdlib.h>
 #include <my_numformat.h>
 
 Test(invert_sign, five)
