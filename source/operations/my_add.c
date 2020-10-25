@@ -62,7 +62,7 @@ char *my_add(char *s1, char *s2)
 char *my_add_exception(char *s1, char *s2)
 {
     char *answer = NULL;
-    int add_minus = (is_first_smaller(s1, s2));
+    int add_minus = (is_first_smaller_unsigned(s1, s2));
 
     s1 = remove_sign(s1);
     s2 = remove_sign(s2);

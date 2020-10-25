@@ -38,7 +38,7 @@ static char *my_get_sub(char *rev_s1, char *rev_s2)
 
 char *my_sub(char *s1, char *s2)
 {
-    int has_been_swaped = 0;
+    int has_been_swapped = 0;
     char *answer = NULL;
 
     if (*s1 == '-' || *s2 == '-')
@@ -47,12 +47,12 @@ char *my_sub(char *s1, char *s2)
     s2 = remove_sign(s2);
     if (is_first_smaller(s1, s2)) {
         my_pointer_swap((void **)&s1, (void **)&s2);
-        has_been_swaped = 1;
+        has_been_swapped = 1;
     }
     if (my_strlen(s1) != my_strlen(s2))
         s2 = fill_of_zero(s2, my_strlen(s1) + 1);
     answer = my_revstr(my_get_sub(my_revstr(s1), my_revstr(s2)));
-    if (has_been_swaped)
+    if (has_been_swapped)
         return (my_put_in_str(my_revstr(answer), 0, '-'));
     return (my_revstr(answer));
 }
@@ -62,7 +62,7 @@ char *my_sub_exception(char *s1, char *s2)
     int has_been_swaped = (*s1 == '-');
     char *answer = NULL;
 
-    if (is_first_smaller(s1, s2)) {
+    if (is_first_smaller_unsigned(s1, s2)) {
         my_pointer_swap((void **)&s1, (void **)&s2);
         has_been_swaped = 1;
     }
