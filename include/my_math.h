@@ -7,6 +7,7 @@
 
 #ifndef _MY_MATH_H_
 #define _MY_MATH_H_
+#include <stdbool.h>
 int my_compute_power_rec(int nb, int power);
 int my_compute_square_root(int nb);
 int my_find_prime_sup(int nb);
