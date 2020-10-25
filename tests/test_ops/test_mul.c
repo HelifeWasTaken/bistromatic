@@ -35,7 +35,13 @@ Test(my_mul, high_numbered_mult_neg)
 {
     cr_assert_str_eq(my_mul("-5", "2000000000"), "-10000000000");
 }
+
 Test(my_mul, high_numbered_mult_two_neg)
 {
     cr_assert_str_eq(my_mul("-5", "-2000000000"), "10000000000");
+}
+
+Test(my_mul, wtf_is_even_this_number_v1)
+{
+    cr_assert_str_eq(my_mul("-9874562313", "8945623109865235623"), "-88334112826977114191740875999");
 }

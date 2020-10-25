@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <my_numformat.h>
 #include <my_stdlib.h>
+#include <my_opp.h>
 
 static char compute_add(int a, int b, int *remain)
 {
@@ -41,6 +42,19 @@ static char *my_get_add(char *s1_rev, char *s2_rev)
 }
 
 char *my_add(char *s1, char *s2)
+{
+    if (get_global_sign(s1, s2) == '-')
+        return (my_sub_exception(s1, s2));
+    s1 = remove_sign(s1);
+    s2 = remove_sign(s2);
+
+    if (my_strlen(s1) < my_strlen(s2))
+        my_pointer_swap((void **)&s1, (void **)&s2);
+    s2 = fill_of_zero(s2, my_strlen(s1));
+    return (my_revstr(my_get_add(my_revstr(s1), my_revstr(s2))));
+}
+
+char *my_add_exception(char *s1, char *s2)
 {
     s1 = remove_sign(s1);
     s2 = remove_sign(s2);

@@ -7,14 +7,23 @@
 
 #include <my_opp.h>
 #include <my_stdlib.h>
+#include <stdio.h>
+#include <my_stdio.h>
 
-int op_parser(char *s1, char *s2, char operator)
+char *op_parser(char *s1, char *s2, char operator)
 {
+    const struct operator_linker array_ops[] = {
+        {'+', &my_add},
+        {'-', &my_sub},
+        {'*', &my_mul},
+        {'\0', 0}
+    };
+    char *(*calc_func)(char *, char *);
     for (int i = 0; array_ops[i].calculation_process != 0; i++) {
         if (array_ops[i].operation == operator) {
             calc_func = array_ops[i].calculation_process;
-            calc_func(s1, s2);
+            return (calc_func(my_strdup(s1), my_strdup(s2)));
         }
     }
-    return (0);
+    return ((void *)0);
 }

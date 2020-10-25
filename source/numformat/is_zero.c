@@ -5,14 +5,16 @@
 ** Source code
 */
 
-int is_zero(char const *str)
+#include <stdbool.h>
+
+bool is_zero(char const *str)
 {
     int i = 0;
 
-    while (str[i] != '\0') {
+    while (str[i]) {
         if (str[i] != '0')
-            return (0);
+            return (false);
         i++;
     }
-    return (1);
+    return (true);
 }

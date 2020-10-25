@@ -5,15 +5,17 @@
 ** operator_basic_check
 */
 
-int is_an_operator(char c)
+#include <stdbool.h>
+
+bool is_an_operator(char c)
 {
     char const operators[5] = { '+', '-', '/', '*', '%' };
     int i = 0;
 
     while (i < 5) {
         if (c == operators[i])
-            return (1);
+            return (true);
         i++;
     }
-    return (0);
+    return (false);
 }

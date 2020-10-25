@@ -9,33 +9,34 @@
 #include <stdlib.h>
 #include <my_stdlib.h>
 #include <my_numformat.h>
+#include <stdbool.h>
 
-static int check_for_authorize_char(char c)
+static bool check_for_authorize_char(char c)
 {
     char const authorized_chars[7] = { '+', '-', '/', '*', '%', '(', ')' };
     int i = 0;
 
     while (i < 7) {
         if (authorized_chars[i] == c)
-            return (1);
+            return (true);
         i++;
     }
-    return (0);
+    return (false);
 }
 
-int check_str_validity(char const *str)
+bool check_str_validity(char const *str)
 {
     int i = 0;
 
     while (str[i]) {
         if (!is_num_letter(str[i]) && !check_for_authorize_char(str[i]))
-            return (0);
+            return (false);
         i++;
     }
-    return (1);
+    return (true);
 }
 
-int check_nb_parentheses(char const *str)
+bool check_nb_parentheses(char const *str)
 {
     int count_open_parantheses = 0;
     int count_close_parantheses = 0;
@@ -51,15 +52,15 @@ int check_nb_parentheses(char const *str)
     return (count_open_parantheses == count_close_parantheses);
 }
 
-int error_check(char const *str)
+bool error_check(char const *str)
 {
     char *str_clean = str_cleaner(my_strdup(str));
 
-    if (check_str_validity(str_clean) && check_nb_parentheses(str_clean) &&
-            check_arithmetic_logic(str_clean)) {
+    if (!check_str_validity(str_clean) || !check_nb_parentheses(str_clean) ||
+            !check_arithmetic_logic(str_clean)) {
         free(str_clean);
-        return (0);
+        return (false);
     }
     free(str_clean);
-    return (84);
+    return (true);
 }

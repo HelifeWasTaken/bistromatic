@@ -31,6 +31,7 @@ SRC 		=   main.c \
 SRC_TEST 	= 	source/operations/my_add.c \
 				source/operations/my_sub.c \
 				source/operations/my_mul.c \
+				source/operations/do_op.c \
 				\
 				source/numformat/fill_of_zero.c \
 				source/numformat/get_global_sign.c \
@@ -55,11 +56,12 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				tests/numformat/test_powten.c \
 				tests/numformat/test_error_handling.c \
 				tests/numformat/test_is_zero.c \
-				\
 				tests/numformat/test_transform_base.c \
+				\
 				tests/test_ops/test_sub.c \
 				tests/test_ops/test_add.c \
-				tests/test_ops/test_mul.c
+				tests/test_ops/test_mul.c \
+				tests/test_ops/test_op_parser.c
 
 TEST_FLAGS 	= 	-l criterion --coverage
 

@@ -45,3 +45,8 @@ Test(my_str_cleaner, trying_harder_arithmetics_with_high_priorities_v2)
 {
     cr_assert_str_eq(str_cleaner(my_strdup("+----+--((2009*--+--2/--+--20--(-+2)))")), "((2009*2/20+(-2)))");
 }
+
+Test(my_str_cleaner, just_testing_a_simple_plus_minus)
+{
+    cr_assert_str_eq(str_cleaner(my_strdup("-456+-23")), "-456-23");
+}

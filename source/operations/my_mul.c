@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <my_numformat.h>
 #include <my_stdlib.h>
-#include <stdio.h>
 #include <my_opp.h>
 
 char *mul_digits(char c1, char c2) {

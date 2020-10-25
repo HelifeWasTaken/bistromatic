@@ -8,7 +8,6 @@
 #include <my_stdlib.h>
 #include <my_str.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 static char *pop_tens(char *str, int count)
 {

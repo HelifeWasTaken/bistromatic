@@ -6,8 +6,9 @@
 */
 
 #include <my_str.h>
+#include <stdbool.h>
 
-int is_first_smaller(char const *s1, char const *s2)
+bool is_first_smaller(char const *s1, char const *s2)
 {
     int len_s1 = my_strlen(s1);
     int len_s2 = my_strlen(s2);
@@ -20,5 +21,5 @@ int is_first_smaller(char const *s1, char const *s2)
             return (s1[i] < s2[i]);
         i++;
     }
-    return (0);
+    return (false);
 }
