@@ -26,7 +26,9 @@ SRC 		=   main.c \
 				source/numformat/is_first_smaller.c \
 				source/numformat/is_first_smaller_unsigned.c \
 				source/numformat/get_sign.c \
+				source/numformat/remove_trailing_zeroes.c \
 				source/numformat/remove_sign.c \
+				source/numformat/invert_sign.c \
 				source/numformat/str_cleaner.c
 
 SRC_TEST 	= 	source/operations/my_add.c \

@@ -14,5 +14,7 @@ char *remove_trailing_zeroes(char *str)
         str[i] = '\0';
         i--;
     }
+    if (str[0] == '\0')
+        str[0] = '0';
     return (str);
 }

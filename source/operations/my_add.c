@@ -46,14 +46,16 @@ char *my_add(char *s1, char *s2)
     int add_minus = (*s1 == '-' && *s2 == '-');
     char *result = NULL;
 
-    if (get_global_sign(s1, s2) == '-')
-        return (my_sub_exception(s1, s2));
-    s1 = remove_sign(s1);
-    s2 = remove_sign(s2);
+    if (get_sign(s1) != get_sign(s2))
+        return (my_add_exception(s1, s2));
+    s1 = remove_sign(my_strdup(s1));
+    s2 = remove_sign(my_strdup(s2));
     if (my_strlen(s1) < my_strlen(s2))
         my_pointer_swap((void **)&s1, (void **)&s2);
     s2 = fill_of_zero(s2, my_strlen(s1));
     result = my_revstr(my_get_add(my_revstr(s1), my_revstr(s2)));
+    free(s1);
+    free(s2);
     if (!add_minus || *result == '0')
         return (result);
     return (my_put_in_str(result, 0, '-'));
@@ -61,16 +63,10 @@ char *my_add(char *s1, char *s2)
 
 char *my_add_exception(char *s1, char *s2)
 {
-    char *answer = NULL;
-    int add_minus = (is_first_smaller_unsigned(s1, s2));
-
-    s1 = remove_sign(s1);
+    if(get_sign(s1) == -1) {
+        s1 = remove_sign(s1);
+        return (invert_sign(my_sub(s1, s2)));
+    }
     s2 = remove_sign(s2);
-    if (my_strlen(s1) < my_strlen(s2))
-        my_pointer_swap((void **)&s1, (void **)&s2);
-    s2 = fill_of_zero(s2, my_strlen(s1));
-    answer = my_revstr(my_get_add(my_revstr(s1), my_revstr(s2)));
-    if (add_minus || *answer == '0')
-        return (answer);
-    return (my_put_in_str(answer, 0, '-'));
+    return (my_sub(s1, s2));
 }
