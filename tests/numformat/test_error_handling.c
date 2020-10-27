@@ -134,3 +134,18 @@ Test(error_handler, checking_multiple_definitions_but_base_is_not_okay)
 {
     cr_assert_eq(error_check_multiple_definition("0123456719", "()+-*/%"), false);
 }
+
+Test(error_handler, checking_multiple_definitions_between_base_and_operators_but_this_is_not_okay_in_base)
+{
+    cr_assert_eq(error_check_multiple_definition("01234567+9", "()+-*/%"), false);
+}
+
+Test(error_handler, checking_multiple_definitions_between_base_and_operators_but_this_is_not_okay_in_operator)
+{
+    cr_assert_eq(error_check_multiple_definition("0123456789", "()+-*/9"), false);
+}
+
+Test(error_handler, checking_multiple_definitions_between_base_and_operators_but_everything_is_okay)
+{
+    cr_assert_eq(error_check_multiple_definition("0123456789", "()+-*/%"), true);
+}

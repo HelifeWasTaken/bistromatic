@@ -29,7 +29,19 @@ bool check_operator_integrity(char const *operator)
     return (true);
 }
 
+bool check_operator_and_base_integrity(char const *operator, char const *base)
+{
+    for (int i = 0; base[i]; i++) {
+        for (int j = 0; operator[j]; j++) {
+            if (base[i] == operator[j])
+                return (false);
+        }
+    }
+    return (true);
+}
+
 bool error_check_multiple_definition(char const *operator, char const *base)
 {
-    return (check_operator_integrity(operator) && check_base_integrity(base));
+    return (check_operator_integrity(operator) && check_base_integrity(base) &&
+            check_operator_and_base_integrity(operator, base));
 }
