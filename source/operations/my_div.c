@@ -12,37 +12,38 @@
 #include <stdio.h>
 #include <my_opp.h>
 
-char *my_get_div(char *s1, char *s2) {
+char *my_get_div(char *s1, char *s2, bool returnMod)
+{
     char *dividend = malloc(sizeof(char) * (my_strlen(s1) + 1));
-    char *remaining = malloc(sizeof(char) * (my_strlen(s1) + 1));
+    char *remaining = NULL;
     char *nearest = NULL;
 
     my_bzero(dividend, sizeof(char) * (my_strlen(s1) + 1));
-    my_bzero(remaining, sizeof(char) * (my_strlen(s1) + 1));
     do {
-        dividend = my_add(dividend, "1");
-        nearest = my_mul(s2, dividend);
-        remaining = my_sub(s1, nearest);
-        printf("dividend = %s, remaining = %s, mult = %s\n", dividend, remaining, my_mul(s2, dividend));
-    } while (is_first_smaller(s2, remaining));
+        dividend = my_add(my_strdup(dividend), my_strdup("1"));
+        nearest = my_mul(my_strdup(s2), my_strdup(dividend));
+        remaining = my_sub(my_strdup(s1), my_strdup(nearest));
+        //printf("dividend = %s, remaining = %s, nearest = %s\n", dividend, remaining, nearest);
+    } while (is_first_smaller("1", remaining));
+    if (returnMod) {
+        free(dividend);
+        return (remaining);
+    }
     free(remaining);
     return (dividend);
 }
 
-char *my_div(char *s1, char *s2)
+char *my_div(char const *s1, char const *s2)
 {
+    char *s1_dup = remove_sign(my_strdup(s1));
+    char *s2_dup = remove_sign(my_strdup(s2));
     char *answer = NULL;
     int is_negative = (get_global_sign(s1, s2) == '-');
 
-    s1 = remove_sign(s1);
-    s2 = remove_sign(s2);
-    answer = my_get_div(s1, s2);
+    answer = my_get_div(s1_dup, s2_dup, false);
     if (is_negative)
-        answer = my_put_in_str(answer, 0, '-');
+        answer = invert_sign(answer);
+    free(s1_dup);
+    free(s2_dup);
     return (answer);
 }
-
-//int main(void) {
-//    printf("%s", my_div(my_strdup("50"), my_strdup("3")));
-//    return (0);
-//}

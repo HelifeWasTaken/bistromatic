@@ -19,6 +19,8 @@ SRC 		=   main.c \
 				source/operations/my_get_sign.c \
 				source/operations/my_add.c \
 				source/operations/my_sub.c \
+				source/operations/my_div.c \
+				source/operations/my_modc \
 				source/operations/my_mul.c \
 				\
 				source/numformat/fill_of_zero.c \
@@ -37,6 +39,8 @@ SRC 		=   main.c \
 
 SRC_TEST 	= 	source/operations/my_add.c \
 				source/operations/my_sub.c \
+				source/operations/my_div.c \
+				source/operations/my_mod.c \
 				source/operations/my_mul.c \
 				source/operations/do_op.c \
 				\
@@ -79,6 +83,8 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				tests/test_ops/test_sub.c \
 				tests/test_ops/test_add.c \
 				tests/test_ops/test_mul.c \
+				tests/test_ops/test_mod.c \
+				tests/test_ops/test_div.c \
 				tests/test_ops/test_op_parser.c
 
 TEST_FLAGS 	= 	-l criterion --coverage
