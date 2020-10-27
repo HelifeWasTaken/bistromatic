@@ -46,3 +46,13 @@ Test(my_sub, left_has_less_digits_than_right)
 {
     cr_assert_str_eq(my_sub(my_strdup("2895"), my_strdup("6")), "2889");
 }
+
+Test(my_sub, big_number)
+{
+    cr_assert_str_eq(my_sub(my_strdup("25622125654"), my_strdup("256355")), "25621869299");
+}
+
+Test(my_sub, big_number_1_neg)
+{
+    cr_assert_str_eq(my_sub(my_strdup("-25622125654"), my_strdup("256355")), "-25622382009");
+}

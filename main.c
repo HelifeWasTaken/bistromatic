@@ -10,6 +10,7 @@
 #include <string.h>
 #include <my_stdio.h>
 #include <bistromatic.h>
+#include <my_str.h>
 
 void show_usage(void)
 {
@@ -62,7 +63,7 @@ int main(int ac, char **av)
     unsigned int size;
     char *expr;
 
-    if (ac != 4) {
+    if (ac != 4 || my_strcmp(av[1], "-h") == 0) {
         show_usage();
         return (EXIT_USAGE);
     }

@@ -55,6 +55,11 @@ Test(is_first_greater, negative_and_negative_v3)
     cr_assert_eq(is_first_greater("-259", "-2587"), true);
 }
 
+Test(is_first_greater, negative_and_negative_v4)
+{
+    cr_assert_eq(is_first_greater("-40001", "-40000"), false);
+}
+
 Test(is_first_greater_unsigned, the_same)
 {
     cr_assert_eq(is_first_greater_unsigned("123", "123"), false);
