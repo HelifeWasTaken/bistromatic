@@ -12,15 +12,13 @@ CFLAGS 		=	-W -Wall -Wextra -pedantic -I./include
 LFLAGS 		=	-L./lib -lmy
 
 SRC 		=   main.c \
+				eval_expr_prepare.c \
 				\
-				source/operations/main.c \
 				source/operations/do_op.c \
-				source/operations/calculations.c \
-				source/operations/my_get_sign.c \
 				source/operations/my_add.c \
 				source/operations/my_sub.c \
 				source/operations/my_div.c \
-				source/operations/my_modc \
+				source/operations/my_mod.c \
 				source/operations/my_mul.c \
 				\
 				source/numformat/fill_of_zero.c \
@@ -36,6 +34,13 @@ SRC 		=   main.c \
 				source/numformat/remove_sign.c \
 				source/numformat/invert_sign.c \
 				source/numformat/str_cleaner.c \
+				source/numformat/is_zero.c \
+				source/numformat/powten.c \
+				source/numformat/check_arithmetic_logic.c \
+				source/numformat/is_an_operator.c \
+				source/numformat/transform_base.c \
+				source/numformat/error_check_arithmetic_expression.c \
+				source/numformat/error_check_multiple_definition.c \
 				\
 				source/evalexpr/eval_expr.c \
 				source/evalexpr/expr.c \

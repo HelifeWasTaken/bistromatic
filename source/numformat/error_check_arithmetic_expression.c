@@ -57,7 +57,7 @@ bool error_check_arithmetic_expression(char const *str)
     char *str_clean = str_cleaner(my_strdup(str));
 
     if (!check_str_validity(str_clean) || !check_nb_parentheses(str_clean) ||
-            !check_arithmetic_logic(str_clean)) {
+        !check_arithmetic_logic(str_clean)) {
         free(str_clean);
         return (false);
     }
