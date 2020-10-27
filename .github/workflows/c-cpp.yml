@@ -9,15 +9,10 @@ on:
 jobs:
   build:
 
-    runs-on: epitest-docker
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: prepare_docker
+      run:  curl https://raw.githubusercontent.com/Heliferepo/epidump_manager/master/install_criterion.sh | sh
+    - name: make_repository
+      run: git clone https://github.com/EpitechIT2020/B-CPE-101-RUN-1-1-bistromatic-mattis.dalleau bistro && make tests_run -C bistro
