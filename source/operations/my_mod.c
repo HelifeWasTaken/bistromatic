@@ -14,17 +14,19 @@
 
 char *my_get_div(char *s1, char *s2, bool returnMod);
 
-char *my_mod(char const *s1, char const *s2)
+char *my_mod(char *s1, char *s2)
 {
-    char *s1_dup = remove_sign(my_strdup(s1));
-    char *s2_dup = remove_sign(my_strdup(s2));
     char *answer = NULL;
-    int is_negative = (get_global_sign(s1, s2) == '-');
+    int is_negative = (get_sign(s1) == -1 && get_sign(s2) == -1);
 
-    answer = my_get_div(s1_dup, s2_dup, true);
+    s1 = remove_sign(s1);
+    s2 = remove_sign(s2);
+    if (is_first_smaller(s1, s2))
+        return (my_strdup(s1));
+    answer = my_get_div(my_strdup(s1), my_strdup(s2), true);
     if (is_negative)
         answer = invert_sign(answer);
-    free(s1_dup);
-    free(s2_dup);
+    free(s1);
+    free(s2);
     return (answer);
 }

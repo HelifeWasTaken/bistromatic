@@ -79,6 +79,7 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				tests/numformat/test_is_zero.c \
 				tests/numformat/test_transform_base.c \
 				tests/numformat/test_are_equals.c \
+				tests/numformat/test_remove_leading_zeros.c \
 				\
 				tests/test_ops/test_sub.c \
 				tests/test_ops/test_add.c \
