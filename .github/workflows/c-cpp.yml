@@ -13,6 +13,6 @@ jobs:
 
     steps:
     - name: prepare_docker
-      run:  sh -c $(curl https://raw.githubusercontent.com/Heliferepo/epidump_manager/master/install_criterion.sh)
+      run:  curl https://raw.githubusercontent.com/Heliferepo/epidump_manager/master/install_criterion.sh | sh
     - name: make
       run: make tests_run
