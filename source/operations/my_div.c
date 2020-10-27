@@ -26,8 +26,8 @@ char *free_results_and_get_it(bool returnMod, char *remaining, char *dividend)
 char *my_get_div(char *s1, char *s2, bool returnMod)
 {
     char *dividend = malloc(sizeof(char) * (my_strlen(s1) + 1));
+    char *nearest = my_strdup("0");
     char *remaining = NULL;
-    char *nearest = NULL;
     char *safe_dup = NULL;
 
     if (is_zero(s2)) {
@@ -37,7 +37,7 @@ char *my_get_div(char *s1, char *s2, bool returnMod)
     my_bzero(dividend, sizeof(char) * (my_strlen(s1) + 1));
     do {
         dividend = my_add(my_strdup(dividend), my_strdup("1"));
-        nearest = my_mul(my_strdup(s2), my_strdup(dividend));
+        nearest = my_add(my_strdup(nearest), my_strdup(s2));
         safe_dup = my_strdup(s1);
         remaining = my_sub(my_strdup(safe_dup), my_strdup(nearest));
         free(safe_dup);
