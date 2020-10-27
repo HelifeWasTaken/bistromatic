@@ -12,13 +12,10 @@
 
 char *op_parser(char *s1, char *s2, char operator)
 {
-    const struct operator_linker array_ops[] = {
-        {'+', &my_add},
-        {'-', &my_sub},
-        {'*', &my_mul},
-        {'\0', 0}
-    };
-    char *(*calc_func)(char const *, char const *);
+    const struct operator_linker array_ops[] = { {'+', &my_add}, {'-', &my_sub},
+    {'*', &my_mul}, {'\0', 0} };
+    char *(*calc_func)(char *, char *);
+
     for (int i = 0; array_ops[i].calculation_process != 0; i++) {
         if (array_ops[i].operation == operator) {
             calc_func = array_ops[i].calculation_process;

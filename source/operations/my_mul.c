@@ -18,7 +18,7 @@ char *mul_digits(char c1, char c2) {
     my_bzero(result, sizeof(char) * 3);
     int remaining = c2 - '0';
     while (remaining > 0) {
-        result = my_add(result, s1);
+        result = my_add(my_strdup(result), my_strdup(s1));
         remaining--;
     }
     free(s1);
@@ -37,25 +37,23 @@ char *my_mul_compute(char *s1, char *s2)
         for (int j = 0; j < s2_len; j++) {
             tmp = mul_digits(s1[s1_len - i - 1], s2[s2_len - j - 1]);
             tmp = powten(tmp, i + j);
-            result = my_add(result, tmp);
+            result = my_add(my_strdup(result), my_strdup(tmp));
         }
     }
     return (result);
 }
 
-char *my_mul(char const *s1, char const *s2)
+char *my_mul(char *s1, char *s2)
 {
-    char *s1_dup = my_strdup(s1);
-    char *s2_dup = my_strdup(s2);
     char *answer = NULL;
-    int is_negative = (get_global_sign(s1_dup, s2_dup) == '-');
+    int is_negative = (get_global_sign(s1, s2) == '-');
 
-    s1_dup = remove_sign(s1_dup);
-    s2_dup = remove_sign(s2_dup);
-    answer = my_mul_compute(s1_dup, s2_dup);
+    s1 = remove_sign(s1);
+    s2 = remove_sign(s2);
+    answer = my_mul_compute(s1, s2);
     if (is_negative)
-        answer = my_put_in_str(answer, 0, '-');
-    free(s1_dup);
-    free(s2_dup);
+        answer = invert_sign(answer);
+    free(s1);
+    free(s2);
     return (answer);
 }

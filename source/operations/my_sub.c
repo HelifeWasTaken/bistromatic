@@ -36,25 +36,25 @@ static char *my_get_sub(char *rev_s1, char *rev_s2)
     return (my_revstr(answer));
 }
 
-char *my_sub(char const *s1, char const *s2)
+char *my_sub(char *s1, char *s2)
 {
     int has_been_swapped = 0;
     char *answer = NULL;
-    char *s1_dup = my_strdup(s1);
-    char *s2_dup = my_strdup(s2);
 
-    if (get_sign(s1_dup) != get_sign(s2_dup))
-        return (my_sub_exception(s1_dup, s2_dup));
-    s1_dup = remove_sign(s1_dup);
-    s2_dup = remove_sign(s2_dup);
-    if (is_first_smaller(s1_dup, s2_dup)) {
-        my_pointer_swap((void **)&s1_dup, (void **)&s2_dup);
+    if (get_sign(s1) != get_sign(s2))
+        return (my_sub_exception(s1, s2));
+    s1 = remove_sign(s1);
+    s2 = remove_sign(s2);
+    if (is_first_smaller(s1, s2)) {
+        my_pointer_swap((void **)&s1, (void **)&s2);
         has_been_swapped = 1;
     }
-    if (my_strlen(s1_dup) != my_strlen(s2_dup))
-        s2_dup = fill_of_zero(s2_dup, my_strlen(s1_dup) + 1);
-    answer = my_revstr(my_get_sub(my_revstr(s1_dup), my_revstr(s2_dup)));
+    if (my_strlen(s1) != my_strlen(s2))
+        s2 = fill_of_zero(s2, my_strlen(s1) + 1);
+    answer = my_revstr(my_get_sub(my_revstr(s1), my_revstr(s2)));
     answer = remove_trailing_zeroes(answer);
+    free(s1);
+    free(s2);
     if (has_been_swapped)
         return (invert_sign(my_revstr(answer)));
     return (my_revstr(answer));

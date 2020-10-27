@@ -42,23 +42,21 @@ static char *my_get_add(char *s1_rev, char *s2_rev)
     return (ans);
 }
 
-char *my_add(char const *s1, char const *s2)
+char *my_add(char *s1, char *s2)
 {
-    char *s1_dup = my_strdup(s1);
-    char *s2_dup = my_strdup(s2);
-    int add_minus = (get_sign(s1_dup) == -1);
+    int add_minus = (get_sign(s1) == -1);
     char *result = NULL;
 
-    if (get_sign(s1_dup) != get_sign(s2_dup))
-        return (my_add_exception(s1_dup, s2_dup));
-    s1_dup = remove_sign(s1_dup);
-    s2_dup = remove_sign(s2_dup);
-    if (my_strlen(s1_dup) < my_strlen(s2_dup))
-        my_pointer_swap((void **)&s1_dup, (void **)&s2_dup);
-    s2_dup = fill_of_zero(s2_dup, my_strlen(s1_dup));
-    result = my_revstr(my_get_add(my_revstr(s1_dup), my_revstr(s2_dup)));
-    free(s1_dup);
-    free(s2_dup);
+    if (get_sign(s1) != get_sign(s2))
+        return (my_add_exception(s1, s2));
+    s1 = remove_sign(s1);
+    s2 = remove_sign(s2);
+    if (my_strlen(s1) < my_strlen(s2))
+        my_pointer_swap((void **)&s1, (void **)&s2);
+    s2 = fill_of_zero(s2, my_strlen(s1));
+    result = my_revstr(my_get_add(my_revstr(s1), my_revstr(s2)));
+    free(s1);
+    free(s2);
     if (!add_minus || *result == '0')
         return (result);
     return (my_put_in_str(result, 0, '-'));
