@@ -35,7 +35,13 @@ SRC 		=   main.c \
 				source/numformat/remove_leading_zeroes.c \
 				source/numformat/remove_sign.c \
 				source/numformat/invert_sign.c \
-				source/numformat/str_cleaner.c
+				source/numformat/str_cleaner.c \
+				\
+				source/evalexpr/eval_expr.c \
+				source/evalexpr/expr.c \
+				source/evalexpr/parser_brackets.c \
+				source/evalexpr/parser.c \
+				source/evalexpr/tokens.c
 
 SRC_TEST 	= 	source/operations/my_add.c \
 				source/operations/my_sub.c \
@@ -65,6 +71,12 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				source/numformat/error_check_multiple_definition.c \
 				source/numformat/is_an_operator.c \
 				\
+				source/evalexpr/eval_expr.c \
+				source/evalexpr/expr.c \
+				source/evalexpr/parser_brackets.c \
+				source/evalexpr/parser.c \
+				source/evalexpr/tokens.c \
+				\
 				tests/numformat/test_fill_of_zero.c \
 				tests/numformat/test_get_global_sign.c \
 				tests/numformat/test_is_first_smaller.c \
@@ -86,7 +98,11 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				tests/test_ops/test_mul.c \
 				tests/test_ops/test_mod.c \
 				tests/test_ops/test_div.c \
-				tests/test_ops/test_op_parser.c
+				tests/test_ops/test_op_parser.c \
+				\
+				tests/evalexpr/test_eval_expr.c \
+				tests/evalexpr/test_expr.c \
+				tests/evalexpr/test_tokens.c
 
 TEST_FLAGS 	= 	-l criterion --coverage
 
