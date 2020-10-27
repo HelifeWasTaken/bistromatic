@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2020
-** error_check
+** error_check_arithmetic_expression
 ** File description:
 ** tests
 */
@@ -22,7 +22,7 @@ Test(error_handler, test_simple_arithmetic_with_only_minus_to_positive_chec)
 
 Test(error_handler, test_simple_arithmetic_with_only_minus_to_minus_trying_to_confuse_the_program_simply)
 {
-    cr_assert_eq(error_check(my_strdup("-----78-+---+-74-89")), true);
+    cr_assert_eq(error_check_arithmetic_expression(my_strdup("-----78-+---+-74-89")), true);
 }
 
 Test(error_handler, trying_simple_arithmetics_confusing_high_priorities)
@@ -32,12 +32,12 @@ Test(error_handler, trying_simple_arithmetics_confusing_high_priorities)
 
 Test(error_handler, trying_simple_arithmetics_confusing_high_priorities_v2)
 {
-    cr_assert_eq(error_check(my_strdup("+--+97/-89*--+---+-03*-5")), true);
+    cr_assert_eq(error_check_arithmetic_expression(my_strdup("+--+97/-89*--+---+-03*-5")), true);
 }
 
 Test(error_handler, trying_harder_arithmetics_confusing_with_high_priorities)
 {
-    cr_assert_eq(error_check(my_strdup("+--+-(789*-(78---+-45/78)--54)")), true);
+    cr_assert_eq(error_check_arithmetic_expression(my_strdup("+--+-(789*-(78---+-45/78)--54)")), true);
 }
 
 Test(error_handler, trying_harder_arithmetics_with_confusing_high_priorities_v2)
@@ -107,15 +107,30 @@ Test(error_handler, trying_to_check_for_each_type_of_operator_plus_parentheses_a
 
 Test(error_handler, validating_str_but_not_parentheses)
 {
-    cr_assert_eq(error_check(my_strdup("654*((+89)")), false);
+    cr_assert_eq(error_check_arithmetic_expression(my_strdup("654*((+89)")), false);
 }
 
 Test(error_handler, validating_str_but_not_logic)
 {
-    cr_assert_eq(error_check(my_strdup("654+/*(90)")), false);
+    cr_assert_eq(error_check_arithmetic_expression(my_strdup("654+/*(90)")), false);
 }
 
 Test(error_handler, validating_nothing)
 {
-    cr_assert_eq(error_check(my_strdup("lol5(*/()))")), false);
+    cr_assert_eq(error_check_arithmetic_expression(my_strdup("lol5(*/()))")), false);
+}
+
+Test(error_handler, checking_multiple_definitions_but_everything_is_okay)
+{
+    cr_assert_eq(error_check_multiple_definition("0123456789", "()+-*/%"), true);
+}
+
+Test(error_handler, checking_multiple_definitions_but_operator_is_not_okay)
+{
+    cr_assert_eq(error_check_multiple_definition("0123456789", "()++*/%"), false);
+}
+
+Test(error_handler, checking_multiple_definitions_but_base_is_not_okay)
+{
+    cr_assert_eq(error_check_multiple_definition("0123456719", "()+-*/%"), false);
 }

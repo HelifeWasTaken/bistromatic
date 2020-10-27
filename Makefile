@@ -55,7 +55,8 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				source/numformat/is_zero.c \
 				source/numformat/powten.c \
 				source/numformat/check_arithmetic_logic.c \
-				source/numformat/error_check.c \
+				source/numformat/error_check_arithmetic_expression.c \
+				source/numformat/error_check_multiple_definition.c \
 				source/numformat/is_an_operator.c \
 				\
 				tests/numformat/test_fill_of_zero.c \

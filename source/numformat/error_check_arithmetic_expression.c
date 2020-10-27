@@ -52,7 +52,7 @@ bool check_nb_parentheses(char const *str)
     return (count_open_parantheses == count_close_parantheses);
 }
 
-bool error_check(char const *str)
+bool error_check_arithmetic_expression(char const *str)
 {
     char *str_clean = str_cleaner(my_strdup(str));
 
