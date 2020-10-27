@@ -15,7 +15,7 @@ char *remove_sign(char *str);
 char *invert_sign(char *str);
 char *str_cleaner(char *raw_str);
 char *transform_to_base_10(char const *raw_str, char const *op_base,
-                           char const *num_base);
+        char const *num_base);
 char *powten(char *str, int count);
 char *remove_trailing_zeroes(char *str);
 char *remove_leading_zeroes(char *str);

@@ -10,7 +10,7 @@
 #include <my_str.h>
 
 char *transform_to_base_10(char const *raw_str, char const *num_base,
-                           char const *op_base)
+        char const *op_base)
 {
     int j = 0;
     char op[8] = "()+-*/%";

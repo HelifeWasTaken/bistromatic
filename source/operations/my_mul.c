@@ -12,10 +12,10 @@
 #include <my_opp.h>
 
 char *mul_digits(char c1, char c2) {
-    char *result = malloc(sizeof(char) * 3);
-    char *s1 = my_strdup(&c1);
+    char *result = my_calloc(sizeof(char), 3);
+    char *s1 = my_calloc(sizeof(char), 2);
 
-    my_bzero(result, sizeof(char) * 3);
+    s1[0] = c1;
     int remaining = c2 - '0';
     while (remaining > 0) {
         result = my_add(my_strdup(result), my_strdup(s1));

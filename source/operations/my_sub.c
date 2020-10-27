@@ -26,10 +26,9 @@ static char compute_my_sub(int a, int b, int *remain)
 
 static char *my_get_sub(char *rev_s1, char *rev_s2)
 {
-    char *answer = malloc(sizeof(char) * (my_strlen(rev_s1) + 2));
+    char *answer = my_calloc(sizeof(char), my_strlen(rev_s1) + 2);
     int remain = 0;
 
-    my_bzero(answer, my_strlen(rev_s1));
     for (int i = 0; rev_s1[i]; i++)
         answer[i] = compute_my_sub(rev_s1[i] - '0', rev_s2[i] - '0', &remain);
     return (my_revstr(answer));

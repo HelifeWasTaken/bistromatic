@@ -13,9 +13,9 @@
 char *remove_leading_zeroes(char *str)
 {
     int i = 0;
-    char *answer = malloc(sizeof(char) * (my_strlen(str + 1)));
+    char *answer = malloc(sizeof(char) * (my_strlen(str) + 1));
 
-    my_bzero(answer, my_strlen(str + 1));
+    my_bzero(answer, my_strlen(str) + 1);
     while (str[i] == '0')
         i++;
     if (str[i] != '\0') {
@@ -24,5 +24,6 @@ char *remove_leading_zeroes(char *str)
         answer[0] = '0';
         answer[1] = '\0';
     }
+    free(str);
     return (answer);
 }

@@ -28,7 +28,6 @@ char *my_get_div(char *s1, char *s2, bool returnMod)
     char *dividend = malloc(sizeof(char) * (my_strlen(s1) + 1));
     char *nearest = my_strdup("0");
     char *remaining = NULL;
-    char *safe_dup = NULL;
 
     if (is_zero(s2)) {
         my_putstr("syntax error");
@@ -36,11 +35,9 @@ char *my_get_div(char *s1, char *s2, bool returnMod)
     }
     my_bzero(dividend, sizeof(char) * (my_strlen(s1) + 1));
     do {
-        dividend = my_add(my_strdup(dividend), my_strdup("1"));
-        nearest = my_add(my_strdup(nearest), my_strdup(s2));
-        safe_dup = my_strdup(s1);
-        remaining = my_sub(my_strdup(safe_dup), my_strdup(nearest));
-        free(safe_dup);
+        dividend = my_add(dividend, my_strdup("1"));
+        nearest = my_add(nearest, my_strdup(s2));
+        remaining = my_sub(my_strdup(s1), my_strdup(nearest));
     } while (is_first_smaller(s2, remaining) || are_equals(s2, remaining));
     free(s1);
     free(s2);
@@ -55,7 +52,7 @@ char *my_div(char *s1, char *s2)
     char *answer = NULL;
 
     if (is_first_smaller(s1, s2))
-        return (my_strdup("0"));
+        return ("0");
     answer = my_get_div(my_strdup(s1_cp), my_strdup(s2_cp), false);
     if (is_negative)
         answer = invert_sign(answer);

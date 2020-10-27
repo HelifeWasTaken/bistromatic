@@ -25,6 +25,7 @@ static char *pop_tens(char *str, int count)
         i--;
         count--;
     }
+    free(str);
     return (newstr);
 }
 
@@ -44,6 +45,7 @@ char *push_tens(char *str, int count)
         count--;
     }
     newstr[i] = '\0';
+    free(str);
     return (newstr);
 }
 

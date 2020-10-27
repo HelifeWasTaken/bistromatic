@@ -38,7 +38,6 @@ expr_node_t *get_element(char **expr, expr_node_t *prev_node, int priority)
     operator_token_t o = operator(expr);
     expr_node_t *tmp_node = NULL;
     expr_node_t *brackets_node = handle_brackets(expr);
-    char *nb = NULL;
 
     if (brackets_node != NULL) {
         operator_token_t next_o = operator(expr);
@@ -54,8 +53,7 @@ expr_node_t *get_element(char **expr, expr_node_t *prev_node, int priority)
         tmp_node = make_tree(expr, priority + 1);
         return (new_expr_node(prev_node, o.symbol, tmp_node));
     }
-    nb = number(expr);
-    return (new_expr_node(prev_node, o.symbol, new_number_node(nb)));
+    return (new_expr_node(prev_node, o.symbol, new_number_node(number(expr))));
 }
 
 expr_node_t *make_tree(char **expr, int priority)

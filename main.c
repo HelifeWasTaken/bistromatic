@@ -62,6 +62,7 @@ int main(int ac, char **av)
 {
     unsigned int size;
     char *expr;
+    char *result = NULL;
 
     if (ac != 4 || my_strcmp(av[1], "-h") == 0) {
         show_usage();
@@ -71,6 +72,9 @@ int main(int ac, char **av)
     check_ops(av[2]);
     size = my_getnbr(av[3]);
     expr = get_expr(size);
-    my_putstr(eval_expr_prepare(av[1], av[2], expr));
+    result = eval_expr_prepare(av[1], av[2], expr);
+    my_putstr(result);
+    free(result);
+    free(expr);
     return (EXIT_SUCCESS);
 }

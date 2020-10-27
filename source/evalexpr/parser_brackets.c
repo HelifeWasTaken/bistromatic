@@ -35,7 +35,7 @@ expr_node_t *handle_brackets(char **expr)
     char *new_expr = NULL;
     char *new_expr_cur = NULL;
     int is_negative = 0;
-    expr_node_t *node = NULL;
+    expr_node_t *nod = NULL;
 
     if (**expr == '-' && (*expr)[1] == '(') {
         is_negative = 1;
@@ -45,7 +45,7 @@ expr_node_t *handle_brackets(char **expr)
         return (NULL);
     new_expr = build_brackets_expr(expr);
     new_expr_cur = new_expr;
-    node = make_tree(&new_expr_cur, 1);
+    nod = make_tree(&new_expr_cur, 1);
     free(new_expr);
-    return (is_negative ? new_expr_node(new_number_node("0"), '-', node) : node);
+    return (is_negative ? new_expr_node(new_number_node("0"), '-', nod) : nod);
 }

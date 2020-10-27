@@ -77,7 +77,7 @@ Test(error_handler, trying_to_check_arithmetic_logic_simple_v2)
 
 Test(error_handler, trying_to_check_arithmetic_logic_harder)
 {
-    cr_assert_eq(check_arithmetic_logic(my_strdup("(4561+478)/595-456*1211")), false);
+    cr_assert_eq(check_arithmetic_logic(my_strdup("(4561+478)/595-456*1211")), true);
 }
 
 Test(error_handler, trying_to_check_arithmetic_logic_harder_v2)
@@ -148,4 +148,34 @@ Test(error_handler, checking_multiple_definitions_between_base_and_operators_but
 Test(error_handler, checking_multiple_definitions_between_base_and_operators_but_everything_is_okay)
 {
     cr_assert_eq(error_check_multiple_definition("0123456789", "()+-*/%"), true);
+}
+
+Test(error_handler, check_arithmetic_logic_with_a_backslash0)
+{
+    cr_assert_eq(check_arithmetic_logic(my_strdup("123456+\0")), false);
+}
+
+Test(error_handler, donkey_kong_likes_banana)
+{
+    cr_assert_eq(check_arithmetic_logic(my_strdup("123456+5\0")), true);
+}
+
+Test(error_handler, aled_v1xp3)
+{
+    cr_assert_eq(check_arithmetic_logic(my_strdup("123456+5))")), true);
+}
+
+Test(error_handler, code_lyoko_un_monde_sans_danger)
+{
+    cr_assert_eq(check_arithmetic_logic(my_strdup("1a23456+5))")), true);
+}
+
+Test(error_handler, code_lyoko_un_monde_sans_danger_mais_ils_ont_tout_reprogramme)
+{
+    cr_assert_eq(check_arithmetic_logic(my_strdup("1a23456+5)+)")), true);
+}
+
+Test(error_handler, code_lyoko_un_monde_sans_danger_mais_ils_ont_tout_reprogramme_maintenant_ils_ont_un_monde_SANS_DANGER)
+{
+    cr_assert_eq(check_arithmetic_logic(my_strdup("1a23456+5)+)5")), false);
 }

@@ -44,7 +44,7 @@ static char *remove_useless_plus(char *str)
 {
     int i_str = 0;
     int i_answer = 0;
-    char *answer = malloc(sizeof(char) * (my_strlen(str) + 1));
+    char *answer = my_calloc(sizeof(char), my_strlen(str) + 1);
 
     while (str[i_str]) {
         if (!(str[i_str] == '+' && !is_num_letter(str[i_str - 1]) &&

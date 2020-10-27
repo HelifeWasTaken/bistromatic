@@ -27,12 +27,10 @@ static char compute_add(int a, int b, int *remain)
 
 static char *my_get_add(char *s1_rev, char *s2_rev)
 {
-    char *ans = malloc(sizeof(char) * my_strlen(s2_rev) + 2);
+    char *ans = my_calloc(sizeof(char), my_strlen(s2_rev) + 2);
     int i = 0;
     int remain = 0;
 
-    my_bzero(ans, my_strlen(s2_rev) + 2);
-    ans[my_strlen(s2_rev) + 2] = '\0';
     while (s2_rev[i]) {
         ans[i] = compute_add(s1_rev[i] - '0', s2_rev[i] - '0', &remain);
         i++;

@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <my_stdlib.h>
 #include <my_numformat.h>
-#include <stdio.h>
+#include <my_stdio.h>
 #include <stdbool.h>
 
 static bool check_for_authorize_char(char c)
