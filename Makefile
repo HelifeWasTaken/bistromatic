@@ -61,6 +61,7 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				tests/numformat/test_fill_of_zero.c \
 				tests/numformat/test_get_global_sign.c \
 				tests/numformat/test_is_first_smaller.c \
+				tests/numformat/test_is_first_greater.c \
 				tests/numformat/test_get_sign.c \
 				tests/numformat/test_invert_sign.c \
 				tests/numformat/test_remove_sign.c \
@@ -70,6 +71,7 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				tests/numformat/test_error_handling.c \
 				tests/numformat/test_is_zero.c \
 				tests/numformat/test_transform_base.c \
+				tests/numformat/test_are_equals.c \
 				\
 				tests/test_ops/test_sub.c \
 				tests/test_ops/test_add.c \

@@ -16,7 +16,7 @@ bool are_equals(char const *s1, char const *s2)
     char *s1_dup = NULL;
     char *s2_dup = NULL;
 
-    if(get_sign(s1) != get_sign(s2))
+    if (get_sign(s1) != get_sign(s2))
         return (false);
     s1_dup = remove_sign(my_strdup(s1));
     s2_dup = remove_sign(my_strdup(s2));
