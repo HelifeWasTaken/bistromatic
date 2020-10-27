@@ -92,6 +92,8 @@ TEST_FLAGS 	= 	-l criterion --coverage
 
 OBJ 		=	$(SRC:.c=.o)
 
+OBJ_TEST 	=	$(SRC_TEST:.c=.o)
+
 EXEC 		=	calc
 
 EXEC_TEST 	= 	calc_test
@@ -117,7 +119,7 @@ tests_run:	clean_test build_lib
 	./$(EXEC_TEST) --verbose
 
 clean_test:
-	rm -rf $(EXEC_TEST)
+	rm -rf $(EXEC_TEST) $(OBJ_TEST)
 
 re:			fclean all
 
