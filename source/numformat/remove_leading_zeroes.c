@@ -1,14 +1,16 @@
 /*
 ** EPITECH PROJECT, 2020
-** remove_trailing_zeroes
+** remove_leading_zeroes
 ** File description:
 ** Source code
 */
-#include <my_str.h>
 
-char *remove_trailing_zeroes(char *str)
+#include <my_str.h>
+#include <my_numformat.h>
+
+char *remove_leading_zeroes(char *str)
 {
-    int i = my_strlen(str) - 1;
+    int i = 0;
 
     while (str[i] == '0') {
         str[i] = '\0';
