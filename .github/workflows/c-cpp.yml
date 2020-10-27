@@ -14,5 +14,5 @@ jobs:
     steps:
     - name: prepare_docker
       run:  curl https://raw.githubusercontent.com/Heliferepo/epidump_manager/master/install_criterion.sh | sh
-    - name: make
-      run: make tests_run
+    - name: make_repository
+      run: git clone https://github.com/EpitechIT2020/B-CPE-101-RUN-1-1-bistromatic-mattis.dalleau bistro && make tests_run -C bistro
