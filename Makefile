@@ -41,6 +41,7 @@ SRC 		=   main.c \
 				source/numformat/transform_base.c \
 				source/numformat/error_check_arithmetic_expression.c \
 				source/numformat/error_check_multiple_definition.c \
+				source/numformat/back_to_base.c \
 				\
 				source/evalexpr/eval_expr.c \
 				source/evalexpr/expr.c \

@@ -47,7 +47,7 @@ Test(error_handler, trying_harder_arithmetics_with_confusing_high_priorities_v2)
 
 Test(error_handler, trying_simple_failure_check_paranthesis)
 {
-    cr_assert_eq(check_nb_parentheses(my_strdup("(55 + 12")), false);
+    cr_assert_eq(check_nb_parentheses(my_strdup("(55+12")), false);
 }
 
 Test(error_handler, trying_simple_failure_check_paranthesis_v2)
@@ -57,17 +57,17 @@ Test(error_handler, trying_simple_failure_check_paranthesis_v2)
 
 Test(error_handler, trying_check_string_validity_v1)
 {
-    cr_assert_eq(check_str_validity(my_strdup("(123546 + 87a990) + 18")), false);
+    cr_assert_eq(check_str_validity(my_strdup("(123546+87a990)+18")), false);
 }
 
 Test(error_handler, trying_check_string_validity_v2)
 {
-    cr_assert_eq(check_str_validity(my_strdup("(123546 + 87990) + 18/p")), false);
+    cr_assert_eq(check_str_validity(my_strdup("(123546+87990)+18/p")), false);
 }
 
 Test(error_handler, trying_to_check_arithmetic_logic_simple)
 {
-    cr_assert_eq(check_arithmetic_logic(my_strdup("123 + 321")), true);
+    cr_assert_eq(check_arithmetic_logic(my_strdup("123+321")), true);
 }
 
 Test(error_handler, trying_to_check_arithmetic_logic_simple_v2)
@@ -77,17 +77,17 @@ Test(error_handler, trying_to_check_arithmetic_logic_simple_v2)
 
 Test(error_handler, trying_to_check_arithmetic_logic_harder)
 {
-    cr_assert_eq(check_arithmetic_logic(my_strdup("(4561 + 478) / 595 - 456 * 1211")), false);
+    cr_assert_eq(check_arithmetic_logic(my_strdup("(4561+478)/595-456*1211")), false);
 }
 
 Test(error_handler, trying_to_check_arithmetic_logic_harder_v2)
 {
-    cr_assert_eq(check_arithmetic_logic(my_strdup("(4561 + 478) / 595 - 456 * 1211 +")), false);
+    cr_assert_eq(check_arithmetic_logic(my_strdup("(4561+478)/595-456*1211+")), false);
 }
 
 Test(error_handler, trying_to_check_arithmetic_logic_harder_v3)
 {
-    cr_assert_eq(check_arithmetic_logic(my_strdup("(4561 + 478) -/ 595 - 456 +* 1211")), false);
+    cr_assert_eq(check_arithmetic_logic(my_strdup("(4561+478)-/595-456+*1211")), false);
 }
 
 Test(error_handler, trying_to_check_for_wrong_type_of_char_sent)

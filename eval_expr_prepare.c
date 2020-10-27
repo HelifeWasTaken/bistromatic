@@ -12,15 +12,15 @@
 #include "./source/evalexpr/eval_expr.h"
 
 char *eval_expr_prepare(char const *base, char const *ops,
-                        char const *expr, unsigned int size)
+                        char const *expr)
 {
     char *transformed_base = transform_to_base_10(expr, base, ops);
 
-    transformed_base = str_cleaner(transformed_base);
-    if (!error_check_arithmetic_expression(transformed_base) &&
+    if (!error_check_arithmetic_expression(transformed_base) ||
         !error_check_multiple_definition(ops, base)) {
         my_putstr("error syntax");
         exit(84);
     }
-    return (eval_expr(transformed_base));
+    transformed_base = str_cleaner(transformed_base);
+    return (back_to_base(eval_expr(transformed_base), base));
 }

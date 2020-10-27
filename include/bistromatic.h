@@ -25,5 +25,5 @@
 #define SYNTAX_ERROR_MSG "syntax error"
 #define ERROR_MSG "error"
 char *eval_expr_prepare(char const *base, char const *ops,
-                        char const *expr, unsigned int size);
+                        char const *expr);
 #endif
