@@ -7,13 +7,13 @@
 
 #include <my_opp.h>
 #include <my_stdlib.h>
-#include <stdio.h>
 #include <my_stdio.h>
 
 char *op_parser(char *s1, char *s2, char operator)
 {
-    const struct operator_linker array_ops[] = { {'+', &my_add}, {'-', &my_sub},
-    {'*', &my_mul}, {'\0', 0} };
+    const struct operator_linker array_ops[] = { { '+', &my_add },
+    { '-', &my_sub }, { '*', &my_mul }, { '/', &my_div }, { '%', &my_mod },
+    { '\0', 0 } };
     char *(*calc_func)(char *, char *);
 
     for (int i = 0; array_ops[i].calculation_process != 0; i++) {

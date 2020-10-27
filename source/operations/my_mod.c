@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <my_numformat.h>
 #include <my_stdlib.h>
-#include <stdio.h>
 #include <my_opp.h>
 
 char *my_get_div(char *s1, char *s2, bool returnMod);

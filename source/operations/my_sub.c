@@ -9,7 +9,6 @@
 #include <my_stdlib.h>
 #include <stdlib.h>
 #include <my_numformat.h>
-#include <stdio.h>
 #include <my_opp.h>
 
 static char compute_my_sub(int a, int b, int *remain)

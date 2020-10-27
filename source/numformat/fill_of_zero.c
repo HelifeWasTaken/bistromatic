@@ -8,7 +8,6 @@
 #include <my_stdlib.h>
 #include <my_str.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 char *fill_of_zero(char *str, int n)
 {
