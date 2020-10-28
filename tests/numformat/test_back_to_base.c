@@ -10,15 +10,15 @@
 
 Test(back_to_base, caroline_fait_du_cheval)
 {
-    cr_assert_str_eq(back_to_base("42", "azertyuiop"), "te");
+    cr_assert_str_eq(back_to_base("42", "azertyuiop", "()+-*/%"), "te");
 }
 
 Test(back_to_base, tony_awk_pro_skater_v5)
 {
-    cr_assert_str_eq(back_to_base("7845", "!#$%&()+-/"), "+-&(");
+    cr_assert_str_eq(back_to_base("7845", "!#$%&()+-/", "()+-*/%"), "+-&(");
 }
 
 Test(back_to_base, wejdene_level_singing)
 {
-    cr_assert_str_eq(back_to_base("-5", "!#$%&()+-/"), "-(");
+    cr_assert_str_eq(back_to_base("-5", "!#$%&()+-/", "()+e*/%"), "e(");
 }

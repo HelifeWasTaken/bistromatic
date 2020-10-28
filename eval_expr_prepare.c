@@ -22,5 +22,5 @@ char *eval_expr_prepare(char const *base, char const *ops,
         exit(84);
     }
     transformed_base = str_cleaner(transformed_base);
-    return (back_to_base(eval_expr(transformed_base), base));
+    return (back_to_base(eval_expr(transformed_base), base, ops));
 }

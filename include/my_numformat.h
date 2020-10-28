@@ -19,7 +19,7 @@ char *transform_to_base_10(char const *raw_str, char const *op_base,
 char *powten(char *str, int count);
 char *remove_trailing_zeroes(char *str);
 char *remove_leading_zeroes(char *str);
-char *back_to_base(char const *raw_str, char const *num_base);
+char *back_to_base(char const *raw_str, char const *num_base, char const *ops);
 bool is_first_smaller(char const *s1, char const *s2);
 bool is_first_smaller_unsigned(char const *s1, char const *s2);
 bool is_first_greater(char const *s1, char const *s2);
