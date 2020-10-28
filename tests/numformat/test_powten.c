@@ -24,7 +24,6 @@ Test(powten, ten_and_two)
     cr_assert_str_eq(powten(my_strdup("10"), 2), "1000");
 }
 
-
 Test(powten, twelve_and_minus_one)
 {
     cr_assert_str_eq(powten(my_strdup("12"), -1), "1");

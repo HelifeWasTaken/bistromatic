@@ -11,8 +11,10 @@
 #include <my_str.h>
 #include <stdlib.h>
 
-static int intlen(int nb) {
+static int intlen(int nb)
+{
     int i = 0;
+
     while (nb > 0) {
         nb /= 10;
         i++;
@@ -20,7 +22,8 @@ static int intlen(int nb) {
     return (i);
 }
 
-static char *int_to_str(int nb) {
+static char *int_to_str(int nb)
+{
     char *res = NULL;
     int i = 0;
 

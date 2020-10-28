@@ -13,6 +13,7 @@
 char *my_pow_int(char *str, int count)
 {
     char *res = NULL;
+
     if (count == 0)
         return my_strdup("1");
     res = my_mul(my_strdup(str), my_pow_int(str, count - 1));
