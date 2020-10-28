@@ -18,7 +18,7 @@ char *eval_expr_prepare(char const *base, char const *ops,
 
     if (!error_check_arithmetic_expression(transformed_base) ||
         !error_check_multiple_definition(ops, base)) {
-        my_putstr("error syntax");
+        my_putstr("syntax error");
         exit(84);
     }
     transformed_base = str_cleaner(transformed_base);
