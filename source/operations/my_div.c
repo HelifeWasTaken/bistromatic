@@ -26,8 +26,8 @@ char *free_results_and_get_it(bool returnMod, char *remaining, char *dividend)
 char *euclide_algorithm(char *s1, char *s2, bool returnMod)
 {
     char *remain = my_strdup(s1);
-    char *quotient = my_strdup("0");
-    char *tenshift = my_strdup("1");
+    char *quotient = "0";
+    char *tenshift = "1";
     char *aux = NULL;
 
     while (GREATER_OR_EQUAL(remain, s2)) {
@@ -58,13 +58,13 @@ char *my_get_div(char *s1, char *s2, bool returnMod)
 char *my_div(char *s1, char *s2)
 {
     int is_negative = (get_global_sign(s1, s2) == '-');
-    char *s1_cp = remove_sign(s1);
-    char *s2_cp = remove_sign(s2);
+    s1 = remove_sign(s1);
+    s2 = remove_sign(s2);
     char *answer = NULL;
 
     if (is_first_smaller(s1, s2))
         return ("0");
-    answer = my_get_div(my_strdup(s1_cp), my_strdup(s2_cp), false);
+    answer = my_get_div(my_strdup(s1), my_strdup(s2), false);
     if (is_negative)
         answer = invert_sign(answer);
     free(s1);

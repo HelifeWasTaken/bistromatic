@@ -16,7 +16,6 @@ char *my_put_in_str(char *str, int index, char to_add)
     int size_to_push = my_strlen(str);
     char *pushed = my_calloc(sizeof(char), size_to_push + 2);
 
-    pushed[size_to_push + 1] = '\0';
     while (size_to_push >= index) {
         pushed[size_to_push + 1] = str[size_to_push];
         size_to_push--;
