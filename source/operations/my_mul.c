@@ -19,7 +19,7 @@ char *mul_digits(char c1, char c2)
     s1[0] = c1;
     int remaining = c2 - '0';
     while (remaining > 0) {
-        result = my_add(my_strdup(result), my_strdup(s1));
+        result = my_add(result, my_strdup(s1));
         remaining--;
     }
     free(s1);
@@ -38,7 +38,7 @@ char *my_mul_compute(char *s1, char *s2)
         for (int j = 0; j < s2_len; j++) {
             tmp = mul_digits(s1[s1_len - i - 1], s2[s2_len - j - 1]);
             tmp = powten(tmp, i + j);
-            result = my_add(my_strdup(result), my_strdup(tmp));
+            result = my_add(result, tmp);
         }
     }
     return (result);
