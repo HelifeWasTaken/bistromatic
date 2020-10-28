@@ -48,7 +48,7 @@ static char *remove_useless_plus(char *str)
 
     while (str[i_str]) {
         if (!(str[i_str] == '+' && !is_num_letter(str[i_str - 1]) &&
-                    !(str[i_str - 1] == ')'))) {
+            !(str[i_str - 1] == ')'))) {
             answer[i_answer] = str[i_str];
             i_answer++;
         }

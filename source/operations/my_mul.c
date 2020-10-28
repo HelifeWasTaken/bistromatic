@@ -11,7 +11,8 @@
 #include <my_stdlib.h>
 #include <my_opp.h>
 
-char *mul_digits(char c1, char c2) {
+char *mul_digits(char c1, char c2)
+{
     char *result = my_calloc(sizeof(char), 3);
     char *s1 = my_calloc(sizeof(char), 2);
 

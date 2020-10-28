@@ -47,5 +47,7 @@ expr_node_t *handle_brackets(char **expr)
     new_expr_cur = new_expr;
     nod = make_tree(&new_expr_cur, 1);
     free(new_expr);
-    return (is_negative ? new_expr_node(new_number_node("0"), '-', nod) : nod);
+    if (is_negative)
+        return (new_expr_node(new_number_node("0"), '-', nod));
+    return (nod);
 }

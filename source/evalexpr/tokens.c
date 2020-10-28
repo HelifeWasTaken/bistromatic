@@ -11,15 +11,6 @@
 #include <my_numformat.h>
 #include "tokens.h"
 
-const operator_token_t operators_tokens[] = {
-    {'*', 2},
-    {'/', 2},
-    {'%', 2},
-    {'+', 1},
-    {'-', 1},
-    {'\0', 0}
-};
-
 void consume_char(char **expr)
 {
     (*expr)++;
@@ -43,6 +34,14 @@ char *number(char **expr)
 operator_token_t operator(char **expr)
 {
     int i = 0;
+    const operator_token_t operators_tokens[] = {
+        {'*', 2},
+        {'/', 2},
+        {'%', 2},
+        {'+', 1},
+        {'-', 1},
+        {'\0', 0}
+    };
 
     while (operators_tokens[i].symbol != '\0') {
         if (operators_tokens[i].symbol == **expr)
