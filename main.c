@@ -34,7 +34,7 @@ static char *get_expr(unsigned int size)
         my_putstr(ERROR_MSG);
         exit(EXIT_MALLOC);
     }
-    if (read(0, expr, size) != size) {
+    if (read(0, expr, size) != size || size >= 300) {
         my_putstr(ERROR_MSG);
         exit(EXIT_READ);
     }
@@ -58,14 +58,6 @@ static void check_base(char const *b)
     }
 }
 
-static void check_input_len(int len)
-{
-    if (len >= 300) {
-        my_putstr("input too long");
-        exit(EXIT_BASE);
-    }
-}
-
 int main(int ac, char **av)
 {
     unsigned int size;
@@ -79,7 +71,6 @@ int main(int ac, char **av)
     check_base(av[1]);
     check_ops(av[2]);
     size = my_getnbr(av[3]);
-    check_input_len(size);
     expr = get_expr(size);
     result = eval_expr_prepare(av[1], av[2], expr);
     my_putstr(result);
