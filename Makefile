@@ -76,6 +76,7 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				source/numformat/error_check_arithmetic_expression.c \
 				source/numformat/error_check_multiple_definition.c \
 				source/numformat/is_an_operator.c \
+				source/numformat/back_to_base.c	\
 				\
 				source/evalexpr/eval_expr.c \
 				source/evalexpr/expr.c \
@@ -98,6 +99,7 @@ SRC_TEST 	= 	source/operations/my_add.c \
 				tests/numformat/test_transform_base.c \
 				tests/numformat/test_are_equals.c \
 				tests/numformat/test_remove_leading_zeros.c \
+				tests/numformat/test_back_to_base.c \
 				\
 				tests/test_ops/test_sub.c \
 				tests/test_ops/test_add.c \
@@ -141,8 +143,8 @@ tests_run:	clean_test build_lib
 	./$(EXEC_TEST) --verbose
 
 clean_test:
-	rm -rf $(EXEC_TEST) $(OBJ_TEST)
+	rm -rf $(EXEC_TEST) $(OBJ_TEST) *.gc*
 
 re:			fclean all
 
-.PHONY:		all build clean fclean re tests_run
+.PHONY:		all $(EXEC) build_lib build clean fclean re tests_run clean_test
