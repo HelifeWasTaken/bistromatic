@@ -34,4 +34,5 @@ bool is_an_operator(char const c);
 bool check_arithmetic_logic(char const *str);
 bool check_str_validity(char const *str);
 bool check_nb_parentheses(char const *str);
+char *base_to_10(char *str, int base);
 #endif

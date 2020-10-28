@@ -14,6 +14,7 @@ char *my_sub_exception(char *str1, char *str2);
 char *my_mul(char *str1, char *str2);
 char *my_div(char *str1, char *str2);
 char *my_mod(char *str1, char *str2);
+char *my_pow_int(char *str, int count);
 char *op_parser(char *str1, char *str2, char operator);
 char my_get_sign(char *str1, char *str2);
 
