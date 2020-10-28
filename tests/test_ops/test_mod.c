@@ -38,7 +38,7 @@ Test(my_mod, modulo_by_zero, .exit_code=84)
 
 Test(my_mod, modulo_negative_s1)
 {
-    cr_assert_str_eq(my_mod(my_strdup("-789"), my_strdup("46")), "7");
+    cr_assert_str_eq(my_mod(my_strdup("-789"), my_strdup("46")), "-7");
 }
 
 Test(my_mod, modulo_negative_s2)
@@ -49,4 +49,9 @@ Test(my_mod, modulo_negative_s2)
 Test(my_mod, modulo_negative_both)
 {
     cr_assert_str_eq(my_mod(my_strdup("-789"), my_strdup("-46")), "-7");
+}
+
+Test(my_mod, s1_lower)
+{
+    cr_assert_str_eq(my_mod(my_strdup("-4"), my_strdup("31")), "-4");
 }
