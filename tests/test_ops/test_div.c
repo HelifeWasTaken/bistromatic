@@ -47,3 +47,18 @@ Test(my_div, division_by_zero, .exit_code=84)
 {
     my_div(my_strdup("789"), my_strdup("0"));
 }
+
+Test(my_div, loong_division_v1, .timeout=10)
+{
+    cr_assert_str_eq(my_div(my_strdup("3187904567890"), my_strdup("3")), "1062634855963");
+}
+
+Test(my_div, loong_division_v2, .timeout=10)
+{
+    cr_assert_str_eq(my_div(my_strdup("1237564212357489"), my_strdup("7")), "176794887479641");
+}
+
+Test(my_div, loong_division_v3, .timeout=10)
+{
+    cr_assert_str_eq(my_div(my_strdup("165498755125487845121156"), my_strdup("4")), "41374688781371961280289");
+}

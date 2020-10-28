@@ -8,6 +8,8 @@
 #ifndef _MY_FORMAT_NUM_H_
 #define _MY_FORMAT_NUM_H_
 #include <stdbool.h>
+#define GREATER_OR_EQUAL(a, b) !is_first_smaller(a, b)
+#define SMALLER_OR_EQUAL(a, b) !is_first_greater(a, b)
 char *fill_of_zero(char *str, int n);
 char get_global_sign(char const *str1, char const *str2);
 int get_sign(char const *str);
