@@ -38,7 +38,7 @@ char *my_get_div(char *s1, char *s2, bool returnMod)
         dividend = my_add(dividend, my_strdup("1"));
         nearest = my_add(nearest, my_strdup(s2));
         remaining = my_sub(my_strdup(s1), my_strdup(nearest));
-    } while (is_first_smaller(s2, remaining) || are_equals(s2, remaining));
+    } while (!is_first_greater(s2, remaining));
     free(s1);
     free(s2);
     return (free_results_and_get_it(returnMod, remaining, dividend));
