@@ -27,21 +27,22 @@ char *euclide_algorithm(char *s1, char *s2, bool returnMod)
 {
     char *remain = my_strdup(s1);
     char *quotient = "0";
-    char *tenshift = "1";
+    char *shift = "1";
     char *aux = NULL;
 
     while (GREATER_OR_EQUAL(remain, s2)) {
-        while (SMALLER_OR_EQUAL(my_mul(my_strdup(s2), my_strdup(tenshift)), s1))
-            tenshift = powten(my_strdup(tenshift), 1);
-        tenshift = powten(my_strdup(tenshift), -1);
-        aux = my_mul(my_strdup(s2), my_strdup(tenshift));
+        shift = my_strdup("1");
+        if (is_first_smaller(powten(my_strdup(s2), 1), s1)) {
+            shift = powten(my_strdup("1"), my_strlen(s1) - my_strlen(s2) - 1);
+        }
+        aux = my_mul(my_strdup(s2), my_strdup(shift));
         while (GREATER_OR_EQUAL(remain, aux)) {
             remain = my_sub(my_strdup(remain), my_strdup(aux));
-            quotient = my_add(my_strdup(quotient), my_strdup(tenshift));
+            quotient = my_add(my_strdup(quotient), my_strdup(shift));
         }
         free(s1);
         s1 = remain;
-        tenshift = my_strdup("1");
+        shift = my_strdup("1");
     }
     return (free_results_and_get_it(returnMod, remain, quotient));
 }

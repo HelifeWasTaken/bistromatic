@@ -15,7 +15,7 @@
 void show_usage(void)
 {
     my_putstr("USAGE\n./calc base operators size_read\n\nDESCRIPTION\n");
-    my_putstr("- base: all the symbols of the base");
+    my_putstr("- base: all the symbols of the base\n");
     my_putstr("- operators: the symbols for the parentheses");
     my_putstr("and the 5 operators\n");
     my_putstr("- size_read: number of characters to be read\n");
@@ -34,7 +34,7 @@ static char *get_expr(unsigned int size)
         my_putstr(ERROR_MSG);
         exit(EXIT_MALLOC);
     }
-    if (read(0, expr, size) != size || size >= 300) {
+    if (read(0, expr, size) != size) {
         my_putstr(ERROR_MSG);
         exit(EXIT_READ);
     }
@@ -72,8 +72,6 @@ int main(int ac, char **av)
     check_ops(av[2]);
     size = my_getnbr(av[3]);
     expr = get_expr(size);
-    my_putstr(expr);
-    return (EXIT_SUCCESS);
     result = eval_expr_prepare(av[1], av[2], expr);
     my_putstr(result);
     free(result);
