@@ -10,47 +10,40 @@
 #include <my_stdlib.h>
 #include <my_str.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-static int intlen(int nb)
+static char *get_digit(char digit, char *base)
 {
+    char *digit_str = my_calloc(sizeof(char), 3);
     int i = 0;
 
-    while (nb > 0) {
-        nb /= 10;
-        i++;
-    }
-    return (i);
+    while (base[i] != digit && base[i] != '\0') i++;
+    my_itoa(i, digit_str, "0123456789");
+    return (digit_str);
 }
 
-static char *int_to_str(int nb)
+static char *get_baselen_str(int len)
 {
-    char *res = NULL;
-    int i = 0;
+    char *base_str = my_calloc(sizeof(char), 20);
 
-    if (nb == 0)
-        return (my_strdup("0"));
-    res = my_calloc(sizeof(char), intlen(nb) + 1);
-    while (nb > 0) {
-        res[i] = nb % 10;
-        nb /= 10;
-        i++;
-    }
-    return (my_revstr(res));
+    my_itoa(len, base_str, "0123456789");
+    return (base_str);
 }
 
-char *base_to_10(char *str, int base)
+char *base_to_10(char *str, char *base)
 {
+    int baselen = my_strlen(base);
+    char *baselen_str = get_baselen_str(baselen);
     int len = my_strlen(str);
-    char *res = my_calloc(sizeof(char), len * (base / 10) + 1);
-    char *digit = my_calloc(sizeof(char), 2);
-    char *base_str = int_to_str(base);
+    char *res = my_calloc(sizeof(char), (len * baselen) / 10 + 2);
+    char *digit = NULL;
     char *tmp = NULL;
     int i = 0;
-
+    
     while (str[i]) {
-        digit[0] = str[i];
-        tmp = my_pow_int(my_strdup(base_str), len - i - 1);
-        res = my_add(my_strdup(res), my_mul(my_strdup(digit), my_strdup(tmp)));
+        digit = get_digit(str[i], base);
+        tmp = my_pow_int(my_strdup(baselen_str), len - i - 1);
+        res = my_add(res, my_mul(my_strdup(digit), my_strdup(tmp)));
         i++;
     }
     return (res);

@@ -16,4 +16,5 @@ void my_sort_int_array(int *array, int size);
 char *my_strdup(char const *str);
 char **my_str_to_word_array(char const *str);
 void my_swap(int *a, int *b);
+void my_itoa(int n, char *s, char const *base);
 #endif

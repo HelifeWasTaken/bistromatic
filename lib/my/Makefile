@@ -20,6 +20,7 @@ SRC 		=   my_math/my_compute_power_rec.c \
 				my_stdlib/my_bzero.c \
 				my_stdlib/my_calloc.c \
 				my_stdlib/my_getnbr.c \
+				my_stdlib/my_itoa.c \
 				my_stdlib/my_memset.c \
 				my_stdlib/my_pointer_swap.c \
 				my_stdlib/my_sort_int_array.c \

@@ -4,8 +4,9 @@
 ** File description:
 ** iota
 */
+#include <my_str.h>
 
-void itoa(int n, char *s, char const *base)
+void my_itoa(int n, char *s, char const *base)
 {
     int i = 0;
     int size_base = my_strlen(base);
@@ -13,7 +14,7 @@ void itoa(int n, char *s, char const *base)
     if (n < 0)
         n -= n;
     do {
-        s[i] = base[n % size_base + '0'];
+        s[i] = base[n % size_base];
         i++;
         n /= size_base;
     } while (n > 0);
