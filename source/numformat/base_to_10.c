@@ -17,7 +17,8 @@ static char *get_digit(char digit, char *base)
     char *digit_str = my_calloc(sizeof(char), 3);
     int i = 0;
 
-    while (base[i] != digit && base[i] != '\0') i++;
+    while (base[i] != digit && base[i] != '\0')
+        i++;
     my_itoa(i, digit_str, "0123456789");
     return (digit_str);
 }
@@ -39,7 +40,7 @@ char *base_to_10(char *str, char *base)
     char *digit = NULL;
     char *tmp = NULL;
     int i = 0;
-    
+
     while (str[i]) {
         digit = get_digit(str[i], base);
         tmp = my_pow_int(my_strdup(baselen_str), len - i - 1);
