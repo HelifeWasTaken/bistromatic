@@ -24,6 +24,6 @@
 #define EXIT_DIV_ZERO 84
 #define SYNTAX_ERROR_MSG "syntax error"
 #define ERROR_MSG "error"
-char *eval_expr_prepare(char const *base, char const *ops,
-                        char const *expr);
+void eval_expr_prepare(char const *base, char const *ops,
+        char const *expr);
 #endif

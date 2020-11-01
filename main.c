@@ -34,7 +34,7 @@ static char *get_expr(unsigned int size)
         my_putstr(ERROR_MSG);
         exit(EXIT_MALLOC);
     }
-    if (read(0, expr, size) != size) {
+    if (read(0, expr, size)) != size) {
         my_putstr(ERROR_MSG);
         exit(EXIT_READ);
     }
@@ -52,7 +52,7 @@ static void check_ops(char const *ops)
 
 static void check_base(char const *b)
 {
-    if (my_strlen(b) != 10) {
+    if (my_strlen(b) < 2) {
         my_putstr(SYNTAX_ERROR_MSG);
         exit(EXIT_BASE);
     }
@@ -62,7 +62,6 @@ int main(int ac, char **av)
 {
     unsigned int size;
     char *expr;
-    char *result = NULL;
 
     if (ac != 4 || my_strcmp(av[1], "-h") == 0) {
         show_usage();
@@ -72,9 +71,7 @@ int main(int ac, char **av)
     check_ops(av[2]);
     size = my_getnbr(av[3]);
     expr = get_expr(size);
-    result = eval_expr_prepare(av[1], av[2], expr);
-    my_putstr(result);
-    free(result);
+    eval_expr_prepare(av[1], av[2], expr);
     free(expr);
     return (EXIT_SUCCESS);
 }

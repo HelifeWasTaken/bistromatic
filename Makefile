@@ -20,6 +20,7 @@ SRC 		=	eval_expr_prepare.c \
 				source/operations/my_div.c \
 				source/operations/my_mod.c \
 				source/operations/my_mul.c \
+				source/operations/my_pow_int.c \
 				\
 				source/numformat/fill_of_zero.c \
 				source/numformat/get_global_sign.c \
@@ -42,6 +43,8 @@ SRC 		=	eval_expr_prepare.c \
 				source/numformat/check_arithmetic_expression.c \
 				source/numformat/check_multiple_definition.c \
 				source/numformat/back_to_base.c \
+				source/numformat/base_to_10.c \
+				source/numformat/get_new_base.c \
 				\
 				source/evalexpr/eval_expr.c \
 				source/evalexpr/expr.c \
@@ -66,6 +69,7 @@ SRC_TEST 	= 	tests/test_general.c \
 				tests/numformat/test_are_equals.c \
 				tests/numformat/test_remove_leading_zeros.c \
 				tests/numformat/test_back_to_base.c \
+				tests/numformat/test_base_to_ten.c \
 				\
 				tests/test_ops/test_sub.c \
 				tests/test_ops/test_add.c \

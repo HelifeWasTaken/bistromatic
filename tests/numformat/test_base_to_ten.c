@@ -11,15 +11,17 @@
 
 Test(base_to_ten, simple_base_33)
 {
-    cr_assert_str_eq(base_to_10(my_strdup("C"), 33), "19");
+    cr_assert_str_eq(get_new_base("AzE", "()z-*/%", "0123456789ABCDEF"), "10+14");
 }
 
+/*
 Test(base_to_ten, simple_base_16)
 {
-    cr_assert_str_eq(base_to_10(my_strdup("A"), 16), "17");
+    cr_assert_str_eq(get_new_base(my_strdup("A"), 16), "17");
 }
 
 Test(base_to_ten, sending_0_as_base)
 {
-    cr_assert_str_eq(base_to_10(my_strdup("A"), 0), "17");
+    cr_assert_str_eq(get_new_base(my_strdup("A"), 0), "17");
 }
+*/

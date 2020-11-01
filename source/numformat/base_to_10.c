@@ -12,7 +12,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static char *get_digit(char digit, char *base)
+static char *get_digit(char const digit, char const *base)
 {
     char *digit_str = my_calloc(sizeof(char), 3);
     int i = 0;
@@ -31,7 +31,7 @@ static char *get_baselen_str(int len)
     return (base_str);
 }
 
-char *base_to_10(char *str, char *base)
+char *base_to_10(char const *str, char const *base)
 {
     int baselen = my_strlen(base);
     char *baselen_str = get_baselen_str(baselen);
