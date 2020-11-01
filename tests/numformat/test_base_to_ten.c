@@ -14,6 +14,11 @@ Test(base_to_ten, simple_base_33)
     cr_assert_str_eq(get_new_base("AzE", "()z-*/%", "0123456789ABCDEF"), "10+14");
 }
 
+Test(base_to_ten, invalid_digit, .exit_code=84)
+{
+    get_new_base("z", "()+-*/%", "0123456789");
+}
+
 /*
 Test(base_to_ten, simple_base_16)
 {
