@@ -8,6 +8,7 @@
 #include <my_numformat.h>
 #include <my_opp.h>
 #include <my_stdlib.h>
+#include <my_stdio.h>
 #include <my_str.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -17,8 +18,12 @@ static char *get_digit(char const digit, char const *base)
     char *digit_str = my_calloc(sizeof(char), 3);
     int i = 0;
 
-    while (base[i] != digit)
+    while (base[i] != digit && base[i] != '\0')
         i++;
+    if (base[i] == '\0') {
+        my_putstr("syntax error");
+        exit(84);
+    }
     my_itoa(i, digit_str, "0123456789");
     return (digit_str);
 }
