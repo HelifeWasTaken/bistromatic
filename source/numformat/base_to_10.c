@@ -17,7 +17,7 @@ static char *get_digit(char const digit, char const *base)
     char *digit_str = my_calloc(sizeof(char), 3);
     int i = 0;
 
-    while (base[i] != digit && base[i] != '\0')
+    while (base[i] != digit)
         i++;
     my_itoa(i, digit_str, "0123456789");
     return (digit_str);

@@ -23,7 +23,7 @@ static bool check_op(char const c, char const *op)
 static char *get_op(char const c, char const *op)
 {
     char *temp = my_calloc(sizeof(char), 2);
-    char const normal_op[6] = { '(', ')', '+', '-', '/', '%' };
+    char const normal_op[7] = { '(', ')', '+', '-', '*', '/', '%' };
     int i = 0;
 
     for (i = 0; 1; i++) {

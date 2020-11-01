@@ -26,3 +26,21 @@ Test(eval_expr_prepare, everything_is_okay, .init=cr_redirect_stdout)
     eval_expr_prepare("0123456789", "()+-*/%", "5+89+3");
     cr_assert_stdout_eq_str("97");
 }
+
+Test(eval_expr_prepare, hex_base, .init=cr_redirect_stdout)
+{
+    eval_expr_prepare("0123456789ABCDEF", "()+-*/%", "A+A");
+    cr_assert_stdout_eq_str("14");
+}
+
+Test(eval_expr_prepare, weird_ops, .init=cr_redirect_stdout)
+{
+    eval_expr_prepare("0123456789", "()v-z/j", "10v10z10");
+    cr_assert_stdout_eq_str("110");
+}
+
+Test(eval_expr_prepare, binary_base_and_weird_ops, .init=cr_redirect_stdout)
+{
+    eval_expr_prepare("01", "()v-z/j", "10v10z10");
+    cr_assert_stdout_eq_str("110");
+}

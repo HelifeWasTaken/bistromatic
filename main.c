@@ -34,7 +34,7 @@ static char *get_expr(unsigned int size)
         my_putstr(ERROR_MSG);
         exit(EXIT_MALLOC);
     }
-    if (read(0, expr, size)) != size) {
+    if (read(0, expr, size) != size) {
         my_putstr(ERROR_MSG);
         exit(EXIT_READ);
     }

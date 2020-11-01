@@ -77,6 +77,7 @@ SRC_TEST 	= 	tests/test_general.c \
 				tests/test_ops/test_mod.c \
 				tests/test_ops/test_div.c \
 				tests/test_ops/test_op_parser.c \
+				tests/test_ops/test_pow_int.c \
 				\
 				tests/evalexpr/test_eval_expr.c \
 				tests/evalexpr/test_expr.c \
