@@ -7,21 +7,30 @@ This project has been made with only write, malloc, and exit from the libC every
 - You cannot add operands to the base
 - You cannot put the same two numbers in the base
 
+## Using it
+
+```sh
+git clone https://github.com/Heliferepo/bistromatic
+cd bistromatic
+make
+echo "expression" | ./calc "base" "operators" size_to_echo
+
+echo "3+3" | ./calc "0123456789" "()+-*/%" 3 #should output 6
+```
+
 This was an epitech project the results were :
 
-----------------------------------------
-| note |  coverage    |    percentage  |
-|------|--------------|-----------------
-|      | 100% lines   |                |
-|  ??  |              |      100%      |
-|      | 100% branches|                |
-----------------------------------------
+| note       | 100% lines    |
+|------------|---------------|
+| coverage   | 100%          |
+| percentage | 100% branches |
 
----------------------------------------
-| Coding style | Minor | Major | Info |
----------------------------------------
-|      N/A     |   0   |   0   |   0  |
----------------------------------------
+- Coding style 
+
+| Minor | 0 |
+|-------|---|
+| Major | 0 |
+| Info  | 0 |
 
 237 units tests has been realised with criterion
 
