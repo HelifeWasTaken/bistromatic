@@ -19,10 +19,10 @@ echo "3+3" | ./calc "0123456789" "()+-*/%" 3 #should output 6
 
 This was an epitech project the results were :
 
-| note       | 100% lines    |
-|------------|---------------|
-| coverage   | 100%          |
-| percentage | 100% branches |
+| type       |           note            |
+|------------|---------------------------|
+| coverage   | 100% lines and branches   |
+| percentage | 100% branches             |
 
 - Coding style 
 
