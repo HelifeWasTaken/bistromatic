@@ -3,7 +3,6 @@
 This project has been made with only write, malloc, and exit from the libC everything else has been implemented by hand
 
 - arithmetic expression such as: 5 6 + 2 is considered as 56+2
-- You can change change base by typing : `base: 01` for example (default base is 10)
 - You cannot add operands to the base
 - You cannot put the same two numbers in the base
 
