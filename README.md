@@ -22,7 +22,7 @@ This was an epitech project the results were :
 | type       |           note            |
 |------------|---------------------------|
 | coverage   | 100% lines and branches   |
-| percentage | 100% branches             |
+| percentage | 100% tests passed         |
 
 - Coding style 
 
